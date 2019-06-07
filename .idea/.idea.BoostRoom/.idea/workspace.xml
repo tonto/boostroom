@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f57910eb-d552-4ffa-b8f9-05c42fd04798" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BoostRoom/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BoostRoom/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/BoostRoom.App.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/App.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/components/Counter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/components/FetchData.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/components/Home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/components/Layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/components/NavMenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/components/NavMenu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/react-app-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/registerServiceWorker.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/store/Counter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/store/WeatherForecasts.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/store/configureStore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/store/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Controllers/SampleDataController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Pages/Error.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Pages/Error.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Pages/_ViewImports.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Properties/launchSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Startup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.App/appsettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoostRoom.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/Class1.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <marker date="1559912437226" expanded="true" signature="50:90" ph="{...}" />
+                <marker date="1559912437226" expanded="true" signature="76:88" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/Class1.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Domain/Class1.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="1130" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AssemblyExplorer" />
+      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="BoostRoom" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="BoostRoom" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Accounts" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-all-files" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="file.status.colors" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/BoostRoom.App/ClientApp/node_modules/typescript/lib" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.BoostRoom.App">
+    <configuration name="BoostRoom.App" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BoostRoom.App/BoostRoom.App.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="BoostRoom.App" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoostRoom.App: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BoostRoom.App/BoostRoom.App.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f57910eb-d552-4ffa-b8f9-05c42fd04798" name="Default Changelist" comment="" />
+      <created>1559851632929</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559851632929</updated>
+      <workItem from="1559851634354" duration="1977000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1977000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1920" height="1130" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="NuGet" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Unit Tests" />
+      <window_info anchor="bottom" id="REST Client" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Performance Profiler" />
+      <window_info anchor="bottom" id="Build" weight="0.32947975" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32851636" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/BoostRoom.App/ClientApp/src/components/NavMenu.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="925">
+          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.App/Properties/launchSettings.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/Class1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1559912437226" expanded="true" signature="50:90" ph="{...}" />
+            <marker date="1559912437226" expanded="true" signature="76:88" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
