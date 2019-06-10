@@ -2,45 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f57910eb-d552-4ffa-b8f9-05c42fd04798" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BoostRoom/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BoostRoom/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/BoostRoom.App.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/App.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/components/Counter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/components/FetchData.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/components/Home.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/components/Layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/components/NavMenu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/components/NavMenu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/react-app-env.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/registerServiceWorker.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/store/Counter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/store/WeatherForecasts.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/store/configureStore.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/src/store/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/ClientApp/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Controllers/SampleDataController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Pages/Error.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Pages/Error.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Pages/_ViewImports.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/Startup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.App/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BoostRoom.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BoostRoom/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BoostRoom/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BoostRoom/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BoostRoom/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoostRoom.Accounts.Domain/BoostRoom.Accounts.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BoostRoom.Accounts.Domain/BoostRoom.Accounts.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoostRoom.Accounts.Tests/BoostRoom.Accounts.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BoostRoom.Accounts.Tests/BoostRoom.Accounts.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoostRoom.Accounts.Tests/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BoostRoom.Accounts.Tests/UnitTests/ClientTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoostRoom.Accounts.Tests/obj/BoostRoom.Accounts.Tests.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BoostRoom.Accounts.Tests/obj/BoostRoom.Accounts.Tests.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoostRoom.Accounts.Tests/obj/Debug/netcoreapp3.0/BoostRoom.Accounts.Tests.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BoostRoom.Accounts.Tests/obj/Debug/netcoreapp3.0/BoostRoom.Accounts.Tests.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoostRoom.Accounts.Tests/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BoostRoom.Accounts.Tests/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoostRoom.Accounts.Tests/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BoostRoom.Accounts.Tests/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoostRoom.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BoostRoom.sln" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,13 +21,89 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/Class1.cs">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Tests/UnitTests/ClientTests.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="225">
+              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
               <folding>
-                <marker date="1559912437226" expanded="true" signature="50:90" ph="{...}" />
-                <marker date="1559912437226" expanded="true" signature="76:88" ph="{...}" />
+                <marker date="1560029761948" expanded="true" signature="6:61" ph="..." />
+                <marker date="1560029761948" expanded="true" signature="107:1648" ph="{...}" />
+                <marker date="1560029761948" expanded="true" signature="138:1646" ph="{...}" />
+                <marker date="1560029761948" expanded="true" signature="212:1640" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/Client.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+              <folding>
+                <marker date="1560029730986" expanded="true" signature="76:1587" ph="{...}" />
+                <marker date="1560029730986" expanded="true" signature="109:1585" ph="{...}" />
+                <marker date="1560029730986" expanded="true" signature="408:428" ph="{...}" />
+                <marker date="1560029730986" expanded="true" signature="776:1179" ph="{...}" />
+                <marker date="1560029730986" expanded="true" signature="1229:1579" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Application/Commands/RegisterClient.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+              <folding>
+                <marker date="1560030315489" expanded="true" signature="49:1172" ph="{...}" />
+                <marker date="1560030315489" expanded="true" signature="90:1170" ph="{...}" />
+                <marker date="1560030315489" expanded="true" signature="814:1164" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/RegistrationService.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+              <folding>
+                <marker date="1560080245542" expanded="true" signature="35:1117" ph="{...}" />
+                <marker date="1560080245542" expanded="true" signature="81:1115" ph="{...}" />
+                <marker date="1560080245542" expanded="true" signature="416:1109" ph="{...}" />
+                <marker date="1560080245542" expanded="true" signature="439:1099" ph="/* Where do we do password, email, username validation ??? ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/ClientRegistered.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+              <folding>
+                <marker date="1560028605127" expanded="true" signature="51:1218" ph="{...}" />
+                <marker date="1560028605127" expanded="true" signature="94:1216" ph="{...}" />
+                <marker date="1560028605127" expanded="true" signature="840:1210" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/Password.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+              <folding>
+                <marker date="1560029649067" expanded="true" signature="35:221" ph="{...}" />
+                <marker date="1560029649067" expanded="true" signature="70:219" ph="{...}" />
+                <marker date="1560029649067" expanded="true" signature="159:213" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -68,21 +115,54 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/Class1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BoostRoom.ClientPortal.Domain/ClientAggregate/Client.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/Client.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/Address.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/FullName.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/Password.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/Email.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/ClientRegistered.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/RegistrationService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BoostRoom.Accounts.Tests/UnitTests/ClientTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/Username.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BoostRoom.Accounts.Application/Commands/RegisterClient.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/BoostRoom.Accounts.Domain/Class1.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Tests/UnitTest1.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/Address.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.SharedKernel/Class1.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.SharedKernel/Password.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.SharedKernel/Email.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.SharedKernel/Username.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.SharedKernel/User.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/FullName.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Domain/Email.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Domain/Username.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.ClientPortal.Domain/Class1.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Domain/User.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.ClientPortal.Domain/ClientAggregate/Client.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Tests/UnitTests/UnitTest1.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/ClientRegistered.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Domain/Password.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/Client.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Tests/UnitTests/ClientTests.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Application/Class1.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Application/Commands/RegisterClient.cs" />
+        <option value="$PROJECT_DIR$/BoostRoom.Accounts.Domain/RegistrationService.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1920" />
-    <option name="height" value="1130" />
+    <option name="height" value="1200" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="SolutionExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -101,6 +181,45 @@
               <item name="" type="784c90a0:SolutionExplorerRootNode" />
               <item name="BoostRoom" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Accounts" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="BoostRoom" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Accounts" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="BoostRoom.Accounts.Application" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="BoostRoom" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Accounts" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="BoostRoom.Accounts.Application" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Commands" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="BoostRoom" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Accounts" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="BoostRoom.Accounts.Domain" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="BoostRoom" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Accounts" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="BoostRoom.Accounts.Domain" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="ClientAggregate" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="BoostRoom" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Accounts" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="BoostRoom.Accounts.Tests" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="BoostRoom" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Accounts" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="BoostRoom.Accounts.Tests" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="UnitTests" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
@@ -173,12 +292,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559851632929</updated>
-      <workItem from="1559851634354" duration="1977000" />
+      <workItem from="1559851634354" duration="11640000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1977000" />
+    <option name="totallyTimeSpent" value="11640000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -190,7 +309,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1130" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
@@ -200,15 +320,15 @@
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Unit Tests" />
+      <window_info anchor="bottom" id="Unit Tests" visible="true" weight="0.30265486" />
       <window_info anchor="bottom" id="REST Client" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32947975" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Performance Profiler" />
-      <window_info anchor="bottom" id="Build" weight="0.32947975" />
+      <window_info anchor="bottom" id="Build" weight="0.32851636" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32851636" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32851636" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -251,11 +371,160 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/Class1.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.SharedKernel/Class1.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/Address.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state>
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
           <folding>
-            <marker date="1559912437226" expanded="true" signature="50:90" ph="{...}" />
-            <marker date="1559912437226" expanded="true" signature="76:88" ph="{...}" />
+            <marker date="1559913292785" expanded="true" signature="51:512" ph="{...}" />
+            <marker date="1559913292785" expanded="true" signature="85:510" ph="{...}" />
+            <marker date="1559913292785" expanded="true" signature="366:504" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/FullName.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding>
+            <marker date="1559914233929" expanded="true" signature="51:331" ph="{...}" />
+            <marker date="1559914233929" expanded="true" signature="79:329" ph="{...}" />
+            <marker date="1559914233929" expanded="true" signature="235:323" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/Username.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding>
+            <marker date="1559946626306" expanded="true" signature="35:213" ph="{...}" />
+            <marker date="1559946626306" expanded="true" signature="70:211" ph="{...}" />
+            <marker date="1559946626306" expanded="true" signature="155:205" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.ClientPortal.Domain/Class1.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/Email.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-start-column="35" selection-end-column="35" />
+          <folding>
+            <marker date="1559946607716" expanded="true" signature="35:201" ph="{...}" />
+            <marker date="1559946607716" expanded="true" signature="67:199" ph="{...}" />
+            <marker date="1559946607716" expanded="true" signature="146:193" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.ClientPortal.Domain/ClientAggregate/Client.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="89" selection-start-line="4" selection-start-column="89" selection-end-line="4" selection-end-column="89" />
+          <folding>
+            <marker date="1559947357894" expanded="true" signature="55:262" ph="{...}" />
+            <marker date="1559947357894" expanded="true" signature="88:260" ph="{...}" />
+            <marker date="1559947357894" expanded="true" signature="103:254" ph="/* Just the data related to orders and any additional stuff unique to this context ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/User.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <marker date="1559947130581" expanded="true" signature="35:231" ph="{...}" />
+            <marker date="1559947130581" expanded="true" signature="68:229" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/Password.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding>
+            <marker date="1560029649067" expanded="true" signature="35:221" ph="{...}" />
+            <marker date="1560029649067" expanded="true" signature="70:219" ph="{...}" />
+            <marker date="1560029649067" expanded="true" signature="159:213" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Tests/UnitTests/ClientTests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <folding>
+            <marker date="1560029761948" expanded="true" signature="6:61" ph="..." />
+            <marker date="1560029761948" expanded="true" signature="107:1648" ph="{...}" />
+            <marker date="1560029761948" expanded="true" signature="138:1646" ph="{...}" />
+            <marker date="1560029761948" expanded="true" signature="212:1640" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Application/Class1.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/Client.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <folding>
+            <marker date="1560029730986" expanded="true" signature="76:1587" ph="{...}" />
+            <marker date="1560029730986" expanded="true" signature="109:1585" ph="{...}" />
+            <marker date="1560029730986" expanded="true" signature="408:428" ph="{...}" />
+            <marker date="1560029730986" expanded="true" signature="776:1179" ph="{...}" />
+            <marker date="1560029730986" expanded="true" signature="1229:1579" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/ClientAggregate/ClientRegistered.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          <folding>
+            <marker date="1560028605127" expanded="true" signature="51:1218" ph="{...}" />
+            <marker date="1560028605127" expanded="true" signature="94:1216" ph="{...}" />
+            <marker date="1560028605127" expanded="true" signature="840:1210" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Application/Commands/RegisterClient.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          <folding>
+            <marker date="1560030315489" expanded="true" signature="49:1172" ph="{...}" />
+            <marker date="1560030315489" expanded="true" signature="90:1170" ph="{...}" />
+            <marker date="1560030315489" expanded="true" signature="814:1164" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BoostRoom.Accounts.Domain/RegistrationService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+          <folding>
+            <marker date="1560080245542" expanded="true" signature="35:1117" ph="{...}" />
+            <marker date="1560080245542" expanded="true" signature="81:1115" ph="{...}" />
+            <marker date="1560080245542" expanded="true" signature="416:1109" ph="{...}" />
+            <marker date="1560080245542" expanded="true" signature="439:1099" ph="/* Where do we do password, email, username validation ??? ... */" />
           </folding>
         </state>
       </provider>

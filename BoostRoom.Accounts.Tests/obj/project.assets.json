@@ -1992,6 +1992,16 @@
         "build": {
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "BoostRoom.Accounts.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/BoostRoom.Accounts.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BoostRoom.Accounts.Domain.dll": {}
+        }
       }
     }
   },
@@ -6603,10 +6613,16 @@
         "xunit.runner.visualstudio.2.4.0.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "BoostRoom.Accounts.Domain/1.0.0": {
+      "type": "project",
+      "path": "../BoostRoom.Accounts.Domain/BoostRoom.Accounts.Domain.csproj",
+      "msbuildProject": "../BoostRoom.Accounts.Domain/BoostRoom.Accounts.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
+      "BoostRoom.Accounts.Domain >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.0.1",
       "Microsoft.NETCore.Platforms >= 3.0.0-preview5.19224.8",
       "xunit >= 2.4.0",
@@ -6646,7 +6662,11 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Domain/BoostRoom.Accounts.Domain.csproj": {
+              "projectPath": "/Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Domain/BoostRoom.Accounts.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -23,7 +23,11 @@
     },
     "frameworks": {
       "netcoreapp3.0": {
-        "projectReferences": {}
+        "projectReferences": {
+          "/Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Domain/BoostRoom.Accounts.Domain.csproj": {
+            "projectPath": "/Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Domain/BoostRoom.Accounts.Domain.csproj"
+          }
+        }
       }
     },
     "warningProperties": {
