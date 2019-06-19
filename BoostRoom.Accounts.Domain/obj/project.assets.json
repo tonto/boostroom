@@ -1,11 +1,64 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.0": {}
+    ".NETCoreApp,Version=v3.0": {
+      "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "TacticalDDD/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Tactical.DDD.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Tactical.DDD.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
+      "sha512": "X5F3KOwqNEUdwlySt4RwXs0zEn/PktbhGX2aNcI4zUYhmky1eNI5hAywOImYcarvEMu+gTAT6IHyHejM9T8sEA==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/3.0.0-preview5.19224.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/_._",
+        "microsoft.netcore.platforms.3.0.0-preview5.19224.8.nupkg.sha512",
+        "microsoft.netcore.platforms.nuspec",
+        "runtime.json",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "TacticalDDD/1.0.1": {
+      "sha512": "j688TSQugTz5OruK9hjdsTYtIVP8XVOD3fWrSUxAgLgsapYz2ObgIOM0wUaO30a/E+XANZt/xgKnpHokeD4ezg==",
+      "type": "package",
+      "path": "tacticalddd/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp2.2/Tactical.DDD.dll",
+        "lib/netcoreapp3.0/Tactical.DDD.dll",
+        "tacticalddd.1.0.1.nupkg.sha512",
+        "tacticalddd.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.0": []
+    ".NETCoreApp,Version=v3.0": [
+      "Microsoft.NETCore.Platforms >= 3.0.0-preview5.19224.8",
+      "TacticalDDD >= 1.0.1"
+    ]
   },
   "packageFolders": {
     "/Users/anes/.nuget/packages/": {},
@@ -51,6 +104,18 @@
     },
     "frameworks": {
       "netcoreapp3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.0.0-preview5.19224.8, )",
+            "autoReferenced": true
+          },
+          "TacticalDDD": {
+            "target": "Package",
+            "version": "[1.0.1, )"
+          }
+        },
         "imports": [
           "net461"
         ],

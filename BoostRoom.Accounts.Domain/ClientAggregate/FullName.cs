@@ -1,6 +1,9 @@
+using System.Collections.Generic;
+using Tactical.DDD;
+
 namespace BoostRoom.Accounts.Domain.ClientAggregate
 {
-    public class FullName
+    public class FullName : ValueObject
     {
         public string FirstName { get; }
         
@@ -10,6 +13,12 @@ namespace BoostRoom.Accounts.Domain.ClientAggregate
         {
             FirstName = firstName;
             LastName = lastName;
+        }
+
+        protected override IEnumerable<object> GetAtomicValues()
+        {
+            yield return FirstName;
+            yield return LastName;
         }
     }
 }

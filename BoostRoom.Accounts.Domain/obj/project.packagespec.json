@@ -34,6 +34,18 @@
   },
   "frameworks": {
     "netcoreapp3.0": {
+      "dependencies": {
+        "Microsoft.NETCore.Platforms": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[3.0.0-preview5.19224.8, )",
+          "autoReferenced": true
+        },
+        "TacticalDDD": {
+          "target": "Package",
+          "version": "[1.0.1, )"
+        }
+      },
       "imports": [
         "net461"
       ],

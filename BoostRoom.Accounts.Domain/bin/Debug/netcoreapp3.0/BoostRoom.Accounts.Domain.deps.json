@@ -7,8 +7,21 @@
   "targets": {
     ".NETCoreApp,Version=v3.0": {
       "BoostRoom.Accounts.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0-preview5.19224.8",
+          "TacticalDDD": "1.0.1"
+        },
         "runtime": {
           "BoostRoom.Accounts.Domain.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {},
+      "TacticalDDD/1.0.1": {
+        "runtime": {
+          "lib/netcoreapp3.0/Tactical.DDD.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -18,6 +31,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-X5F3KOwqNEUdwlySt4RwXs0zEn/PktbhGX2aNcI4zUYhmky1eNI5hAywOImYcarvEMu+gTAT6IHyHejM9T8sEA==",
+      "path": "microsoft.netcore.platforms/3.0.0-preview5.19224.8",
+      "hashPath": "microsoft.netcore.platforms.3.0.0-preview5.19224.8.nupkg.sha512"
+    },
+    "TacticalDDD/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j688TSQugTz5OruK9hjdsTYtIVP8XVOD3fWrSUxAgLgsapYz2ObgIOM0wUaO30a/E+XANZt/xgKnpHokeD4ezg==",
+      "path": "tacticalddd/1.0.1",
+      "hashPath": "tacticalddd.1.0.1.nupkg.sha512"
     }
   }
 }

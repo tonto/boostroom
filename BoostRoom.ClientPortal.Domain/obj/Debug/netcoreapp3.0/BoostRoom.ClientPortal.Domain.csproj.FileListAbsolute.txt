@@ -6,3 +6,4 @@
 /Users/anes/RiderProjects/BoostRoom/BoostRoom.ClientPortal.Domain/obj/Debug/netcoreapp3.0/BoostRoom.ClientPortal.Domain.AssemblyInfo.cs
 /Users/anes/RiderProjects/BoostRoom/BoostRoom.ClientPortal.Domain/obj/Debug/netcoreapp3.0/BoostRoom.ClientPortal.Domain.dll
 /Users/anes/RiderProjects/BoostRoom/BoostRoom.ClientPortal.Domain/obj/Debug/netcoreapp3.0/BoostRoom.ClientPortal.Domain.pdb
+/Users/anes/RiderProjects/BoostRoom/BoostRoom.ClientPortal.Domain/obj/Debug/netcoreapp3.0/BoostRoom.ClientPortal.Domain.csprojAssemblyReference.cache

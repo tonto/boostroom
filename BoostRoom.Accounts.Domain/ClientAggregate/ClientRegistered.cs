@@ -1,7 +1,12 @@
+using System;
+using Tactical.DDD;
+
 namespace BoostRoom.Accounts.Domain.ClientAggregate
 {
-    public sealed class ClientRegistered
+    public sealed class ClientRegistered : IDomainEvent
     {
+        public DateTime CreatedAt { get; }
+        public ClientId ClientId { get; }
         public string Username { get; }
         public string Email { get; }
         public string EncryptedPassword { get; }
@@ -14,6 +19,7 @@ namespace BoostRoom.Accounts.Domain.ClientAggregate
         public bool SubscribedToOffers { get; }
 
         public ClientRegistered(
+            ClientId clientId,
             string username,
             string email,
             string encryptedPassword,
@@ -25,6 +31,8 @@ namespace BoostRoom.Accounts.Domain.ClientAggregate
             string country,
             bool subscribedToOffers)
         {
+            ClientId = clientId;
+            CreatedAt = DateTime.Now;
             Username = username;
             Email = email;
             EncryptedPassword = encryptedPassword;

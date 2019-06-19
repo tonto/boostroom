@@ -97,3 +97,4 @@
 /Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Tests/obj/Debug/netcoreapp3.0/BoostRoom.Accounts.Tests.pdb
 /Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Tests/bin/Debug/netcoreapp3.0/BoostRoom.Accounts.Domain.dll
 /Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Tests/bin/Debug/netcoreapp3.0/BoostRoom.Accounts.Domain.pdb
+/Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Tests/bin/Debug/netcoreapp3.0/Tactical.DDD.dll

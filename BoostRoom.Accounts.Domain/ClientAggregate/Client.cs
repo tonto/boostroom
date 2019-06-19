@@ -1,8 +1,9 @@
 using System.Threading;
+using Tactical.DDD.EventSourcing;
 
 namespace BoostRoom.Accounts.Domain.ClientAggregate
 {
-    public sealed class Client
+    public sealed class Client : AggregateRoot<ClientId>
     {
         public Username Username { get; private set; }
         public Email Email { get; private set; }
@@ -15,6 +16,7 @@ namespace BoostRoom.Accounts.Domain.ClientAggregate
         }
 
         public static Client RegisterWithDetails(
+            ClientId id,
             string username,
             string email,
             string encryptedPassword,
@@ -28,23 +30,27 @@ namespace BoostRoom.Accounts.Domain.ClientAggregate
         {
             var client = new Client();
 
-            client.On(new ClientRegistered(
-                username,
-                email,
-                encryptedPassword,
-                firstName,
-                lastName,
-                addressLine,
-                city,
-                zip,
-                country,
-                subscribeToOffers));
+            client.Apply(
+                new ClientRegistered(
+                    id,
+                    username,
+                    email,
+                    encryptedPassword,
+                    firstName,
+                    lastName,
+                    addressLine,
+                    city,
+                    zip,
+                    country,
+                    subscribeToOffers)
+            );
 
             return client;
         }
 
-        private void On(ClientRegistered @event)
+        public void On(ClientRegistered @event)
         {
+            Id = @event.ClientId;
             Username = new Username(@event.Username);
             Email = new Email(@event.Email);
             FullName = new FullName(@event.FirstName, @event.LastName);

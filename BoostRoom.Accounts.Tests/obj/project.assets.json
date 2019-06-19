@@ -1916,6 +1916,15 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
+      "TacticalDDD/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Tactical.DDD.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Tactical.DDD.dll": {}
+        }
+      },
       "xunit/2.4.0": {
         "type": "package",
         "dependencies": {
@@ -1996,6 +2005,9 @@
       "BoostRoom.Accounts.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "TacticalDDD": "1.0.1"
+        },
         "compile": {
           "bin/placeholder/BoostRoom.Accounts.Domain.dll": {}
         },
@@ -6472,6 +6484,19 @@
         "ref/xamarinwatchos10/_._",
         "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
+      ]
+    },
+    "TacticalDDD/1.0.1": {
+      "sha512": "j688TSQugTz5OruK9hjdsTYtIVP8XVOD3fWrSUxAgLgsapYz2ObgIOM0wUaO30a/E+XANZt/xgKnpHokeD4ezg==",
+      "type": "package",
+      "path": "tacticalddd/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp2.2/Tactical.DDD.dll",
+        "lib/netcoreapp3.0/Tactical.DDD.dll",
+        "tacticalddd.1.0.1.nupkg.sha512",
+        "tacticalddd.nuspec"
       ]
     },
     "xunit/2.4.0": {

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "BoostRoom.Accounts.Application/1.0.0": {
+        "runtime": {
+          "BoostRoom.Accounts.Application.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BoostRoom.Accounts.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

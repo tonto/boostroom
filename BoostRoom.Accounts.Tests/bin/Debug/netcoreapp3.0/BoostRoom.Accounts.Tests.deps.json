@@ -1319,6 +1319,14 @@
           }
         }
       },
+      "TacticalDDD/1.0.1": {
+        "runtime": {
+          "lib/netcoreapp3.0/Tactical.DDD.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "xunit/2.4.0": {
         "dependencies": {
           "xunit.analyzers": "0.10.0",
@@ -1377,6 +1385,9 @@
         }
       },
       "BoostRoom.Accounts.Domain/1.0.0": {
+        "dependencies": {
+          "TacticalDDD": "1.0.1"
+        },
         "runtime": {
           "BoostRoom.Accounts.Domain.dll": {}
         }
@@ -2032,6 +2043,13 @@
       "sha512": "sha512-gQQaCNO5FYxD37SNQvE+yZUNfCt/Y+FgCnead3hu37RsUiwy2cxqRDWPv+Ee+6DlOeV47xaSYYZ6GQW4EhoEXQ==",
       "path": "system.xml.xpath.xmldocument/4.0.1",
       "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
+    },
+    "TacticalDDD/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j688TSQugTz5OruK9hjdsTYtIVP8XVOD3fWrSUxAgLgsapYz2ObgIOM0wUaO30a/E+XANZt/xgKnpHokeD4ezg==",
+      "path": "tacticalddd/1.0.1",
+      "hashPath": "tacticalddd.1.0.1.nupkg.sha512"
     },
     "xunit/2.4.0": {
       "type": "package",
