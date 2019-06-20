@@ -24,16 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/scss/blk-design-system-pro.scss",
               "src/styles.scss"
             ],
-            "scripts": [],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "./src/assets/scss",
-                "./src/assets/scss/blk-design-system-pro"
-              ]
-           }
+            "scripts": []
           },
           "configurations": {
             "production": {
