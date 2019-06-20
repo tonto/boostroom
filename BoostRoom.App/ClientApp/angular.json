@@ -24,10 +24,16 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/assets/scss/blk-design-system-pro.scss",
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/assets/scss",
+                "./src/assets/scss/blk-design-system-pro"
+              ]
+           }
           },
           "configurations": {
             "production": {
