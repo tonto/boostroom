@@ -1,20 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accounts", "Accounts", "{71765B70-617C-47D1-8E68-FC5B9F0FBEEE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientPortal", "ClientPortal", "{E77FA3A9-5A3E-4718-A0A6-998D4D62B3AA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SellerPortal", "SellerPortal", "{97FD260B-DB36-463C-9B0C-D23355476034}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostRoom.Accounts.Domain", "BoostRoom.Accounts.Domain\BoostRoom.Accounts.Domain.csproj", "{9AA7C21C-F1A6-461B-ADDC-4A0C4879FD80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoostRoom.Accounts.Domain", "BoostRoom.Accounts.Domain\BoostRoom.Accounts.Domain.csproj", "{9AA7C21C-F1A6-461B-ADDC-4A0C4879FD80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostRoom.Accounts.Tests", "BoostRoom.Accounts.Tests\BoostRoom.Accounts.Tests.csproj", "{EA2AFC35-2AF6-4E49-A297-3342F6A233F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoostRoom.Accounts.Tests", "BoostRoom.Accounts.Tests\BoostRoom.Accounts.Tests.csproj", "{EA2AFC35-2AF6-4E49-A297-3342F6A233F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostRoom.ClientPortal.Domain", "BoostRoom.ClientPortal.Domain\BoostRoom.ClientPortal.Domain.csproj", "{035D14CC-CAC4-44C7-9125-39BB8335E979}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoostRoom.ClientPortal.Domain", "BoostRoom.ClientPortal.Domain\BoostRoom.ClientPortal.Domain.csproj", "{035D14CC-CAC4-44C7-9125-39BB8335E979}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostRoom.Accounts.Application", "BoostRoom.Accounts.Application\BoostRoom.Accounts.Application.csproj", "{8DF42621-B2BE-451B-8492-4CBDC6BFF268}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoostRoom.Accounts.Application", "BoostRoom.Accounts.Application\BoostRoom.Accounts.Application.csproj", "{8DF42621-B2BE-451B-8492-4CBDC6BFF268}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostRoom.App", "BoostRoom.App\BoostRoom.App.csproj", "{987985C5-9165-4A56-BFBA-03E0D9DE87CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoostRoom.Integration.Tests", "BoostRoom.Integration.Tests\BoostRoom.Integration.Tests.csproj", "{C077059E-EE31-42FE-8547-397F7E5F2962}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostRoom.WebApp", "BoostRoom.WebApp\BoostRoom.WebApp.csproj", "{EB802516-D209-41D0-AB93-0BAA4B237010}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostRoom.Infrastructure", "BoostRoom.Infrastructure\BoostRoom.Infrastructure.csproj", "{F438340D-2DE3-4CBC-A11F-77B8DA6A62A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,15 +45,29 @@ Global
 		{8DF42621-B2BE-451B-8492-4CBDC6BFF268}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DF42621-B2BE-451B-8492-4CBDC6BFF268}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DF42621-B2BE-451B-8492-4CBDC6BFF268}.Release|Any CPU.Build.0 = Release|Any CPU
-		{987985C5-9165-4A56-BFBA-03E0D9DE87CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{987985C5-9165-4A56-BFBA-03E0D9DE87CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{987985C5-9165-4A56-BFBA-03E0D9DE87CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{987985C5-9165-4A56-BFBA-03E0D9DE87CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C077059E-EE31-42FE-8547-397F7E5F2962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C077059E-EE31-42FE-8547-397F7E5F2962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C077059E-EE31-42FE-8547-397F7E5F2962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C077059E-EE31-42FE-8547-397F7E5F2962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB802516-D209-41D0-AB93-0BAA4B237010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB802516-D209-41D0-AB93-0BAA4B237010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB802516-D209-41D0-AB93-0BAA4B237010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB802516-D209-41D0-AB93-0BAA4B237010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F438340D-2DE3-4CBC-A11F-77B8DA6A62A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F438340D-2DE3-4CBC-A11F-77B8DA6A62A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F438340D-2DE3-4CBC-A11F-77B8DA6A62A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F438340D-2DE3-4CBC-A11F-77B8DA6A62A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9AA7C21C-F1A6-461B-ADDC-4A0C4879FD80} = {71765B70-617C-47D1-8E68-FC5B9F0FBEEE}
 		{EA2AFC35-2AF6-4E49-A297-3342F6A233F2} = {71765B70-617C-47D1-8E68-FC5B9F0FBEEE}
 		{035D14CC-CAC4-44C7-9125-39BB8335E979} = {E77FA3A9-5A3E-4718-A0A6-998D4D62B3AA}
 		{8DF42621-B2BE-451B-8492-4CBDC6BFF268} = {71765B70-617C-47D1-8E68-FC5B9F0FBEEE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EB871B7-F2FC-40E8-99AE-0D3C4215B94C}
 	EndGlobalSection
 EndGlobal

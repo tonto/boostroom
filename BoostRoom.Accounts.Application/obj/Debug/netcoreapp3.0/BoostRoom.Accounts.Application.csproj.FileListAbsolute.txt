@@ -7,3 +7,12 @@
 /Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Application/obj/Debug/netcoreapp3.0/BoostRoom.Accounts.Application.AssemblyInfo.cs
 /Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Application/obj/Debug/netcoreapp3.0/BoostRoom.Accounts.Application.dll
 /Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Application/obj/Debug/netcoreapp3.0/BoostRoom.Accounts.Application.pdb
+C:\Users\anes\projects\boostroom\BoostRoom.Accounts.Application\bin\Debug\netcoreapp3.0\BoostRoom.Accounts.Application.deps.json
+C:\Users\anes\projects\boostroom\BoostRoom.Accounts.Application\bin\Debug\netcoreapp3.0\BoostRoom.Accounts.Application.dll
+C:\Users\anes\projects\boostroom\BoostRoom.Accounts.Application\bin\Debug\netcoreapp3.0\BoostRoom.Accounts.Application.pdb
+C:\Users\anes\projects\boostroom\BoostRoom.Accounts.Application\obj\Debug\netcoreapp3.0\BoostRoom.Accounts.Application.csproj.CoreCompileInputs.cache
+C:\Users\anes\projects\boostroom\BoostRoom.Accounts.Application\obj\Debug\netcoreapp3.0\BoostRoom.Accounts.Application.AssemblyInfoInputs.cache
+C:\Users\anes\projects\boostroom\BoostRoom.Accounts.Application\obj\Debug\netcoreapp3.0\BoostRoom.Accounts.Application.AssemblyInfo.cs
+C:\Users\anes\projects\boostroom\BoostRoom.Accounts.Application\obj\Debug\netcoreapp3.0\BoostRoom.Accounts.Application.dll
+C:\Users\anes\projects\boostroom\BoostRoom.Accounts.Application\obj\Debug\netcoreapp3.0\BoostRoom.Accounts.Application.pdb
+C:\Users\anes\projects\boostroom\BoostRoom.Accounts.Application\obj\Debug\netcoreapp3.0\BoostRoom.Accounts.Application.csprojAssemblyReference.cache

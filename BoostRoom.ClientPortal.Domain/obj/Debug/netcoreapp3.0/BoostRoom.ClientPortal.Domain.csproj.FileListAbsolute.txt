@@ -7,3 +7,11 @@
 /Users/anes/RiderProjects/BoostRoom/BoostRoom.ClientPortal.Domain/obj/Debug/netcoreapp3.0/BoostRoom.ClientPortal.Domain.dll
 /Users/anes/RiderProjects/BoostRoom/BoostRoom.ClientPortal.Domain/obj/Debug/netcoreapp3.0/BoostRoom.ClientPortal.Domain.pdb
 /Users/anes/RiderProjects/BoostRoom/BoostRoom.ClientPortal.Domain/obj/Debug/netcoreapp3.0/BoostRoom.ClientPortal.Domain.csprojAssemblyReference.cache
+C:\Users\anes\projects\boostroom\BoostRoom.ClientPortal.Domain\bin\Debug\netcoreapp3.0\BoostRoom.ClientPortal.Domain.deps.json
+C:\Users\anes\projects\boostroom\BoostRoom.ClientPortal.Domain\bin\Debug\netcoreapp3.0\BoostRoom.ClientPortal.Domain.dll
+C:\Users\anes\projects\boostroom\BoostRoom.ClientPortal.Domain\bin\Debug\netcoreapp3.0\BoostRoom.ClientPortal.Domain.pdb
+C:\Users\anes\projects\boostroom\BoostRoom.ClientPortal.Domain\obj\Debug\netcoreapp3.0\BoostRoom.ClientPortal.Domain.csproj.CoreCompileInputs.cache
+C:\Users\anes\projects\boostroom\BoostRoom.ClientPortal.Domain\obj\Debug\netcoreapp3.0\BoostRoom.ClientPortal.Domain.AssemblyInfoInputs.cache
+C:\Users\anes\projects\boostroom\BoostRoom.ClientPortal.Domain\obj\Debug\netcoreapp3.0\BoostRoom.ClientPortal.Domain.AssemblyInfo.cs
+C:\Users\anes\projects\boostroom\BoostRoom.ClientPortal.Domain\obj\Debug\netcoreapp3.0\BoostRoom.ClientPortal.Domain.dll
+C:\Users\anes\projects\boostroom\BoostRoom.ClientPortal.Domain\obj\Debug\netcoreapp3.0\BoostRoom.ClientPortal.Domain.pdb

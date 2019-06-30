@@ -5,7 +5,7 @@ namespace BoostRoom.Accounts.Domain.ClientAggregate
 {
     public sealed class ClientId : EntityId
     {
-        private Guid _id;
+        private readonly Guid _id;
 
         public ClientId()
         {

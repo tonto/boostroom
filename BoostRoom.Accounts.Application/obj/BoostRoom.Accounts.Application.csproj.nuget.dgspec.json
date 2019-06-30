@@ -1,28 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Application/BoostRoom.Accounts.Application.csproj": {}
+    "C:\\Users\\anes\\projects\\boostroom\\BoostRoom.Accounts.Application\\BoostRoom.Accounts.Application.csproj": {}
   },
   "projects": {
-    "/Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Application/BoostRoom.Accounts.Application.csproj": {
+    "C:\\Users\\anes\\projects\\boostroom\\BoostRoom.Accounts.Application\\BoostRoom.Accounts.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Application/BoostRoom.Accounts.Application.csproj",
+        "projectUniqueName": "C:\\Users\\anes\\projects\\boostroom\\BoostRoom.Accounts.Application\\BoostRoom.Accounts.Application.csproj",
         "projectName": "BoostRoom.Accounts.Application",
-        "projectPath": "/Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Application/BoostRoom.Accounts.Application.csproj",
-        "packagesPath": "/Users/anes/.nuget/packages/",
-        "outputPath": "/Users/anes/RiderProjects/BoostRoom/BoostRoom.Accounts.Application/obj/",
+        "projectPath": "C:\\Users\\anes\\projects\\boostroom\\BoostRoom.Accounts.Application\\BoostRoom.Accounts.Application.csproj",
+        "packagesPath": "C:\\Users\\anes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anes\\projects\\boostroom\\BoostRoom.Accounts.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/anes/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\anes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.0"
+          "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
           "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
@@ -32,7 +34,7 @@
           "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.0": {
+          "netcoreapp2.2": {
             "projectReferences": {}
           }
         },
@@ -43,21 +45,20 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.0": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
           "imports": [
             "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0-preview5-27626-15, 3.0.0-preview5-27626-15]"
-            }
-          ],
-          "frameworkReferences": [
-            "Microsoft.NETCore.App"
-          ]
+          "warn": true
         }
       }
     }

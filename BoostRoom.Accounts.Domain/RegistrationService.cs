@@ -2,6 +2,13 @@ namespace BoostRoom.Accounts.Domain
 {
     public sealed class RegistrationService
     {
+        private IPasswordEncoder _passwordEncoder;
+
+        public RegistrationService(IPasswordEncoder passwordEncoder)
+        {
+            _passwordEncoder = passwordEncoder;
+        }
+
         public void RegisterClient(
             string username,
             string email,
