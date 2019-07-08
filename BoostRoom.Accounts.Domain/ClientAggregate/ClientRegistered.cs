@@ -1,19 +1,39 @@
 using System;
+using Newtonsoft.Json;
 using Tactical.DDD;
 
 namespace BoostRoom.Accounts.Domain.ClientAggregate
 {
     public sealed class ClientRegistered : DomainEvent
     {
+        [JsonProperty("username")]
         public string Username { get; }
+        
+        [JsonProperty("email")]
         public string Email { get; }
+        
+        [JsonProperty("encrypted_password")]
         public string EncryptedPassword { get; }
+        
+        [JsonProperty("first_name")]
         public string FirstName { get; }
+        
+        [JsonProperty("last_name")]
         public string LastName { get; }
+        
+        [JsonProperty("address_line")]
         public string AddressLine { get; }
+        
+        [JsonProperty("city")]
         public string City { get; }
+        
+        [JsonProperty("zip")]
         public string Zip { get; }
+        
+        [JsonProperty("country")]
         public string Country { get; }
+        
+        [JsonProperty("subscribed_to_offers")]
         public bool SubscribedToOffers { get; }
 
         public ClientRegistered(

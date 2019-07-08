@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+using MediatR;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
@@ -14,7 +16,7 @@ namespace BoostRoom.Integration.Tests.AccountsTests
         {
             builder.ConfigureServices(services =>
             {
-                // Configure
+                services.AddMediatR(typeof(BoostRoom.Accounts.Application.Assembly).Assembly);
             });
         }
     }

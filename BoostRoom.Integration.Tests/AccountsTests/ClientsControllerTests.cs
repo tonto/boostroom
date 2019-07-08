@@ -66,6 +66,8 @@ namespace BoostRoom.Integration.Tests.AccountsTests
 
             response.EnsureSuccessStatusCode();
 
+            Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
+            
             // TODO Assert event saved
         }
     }

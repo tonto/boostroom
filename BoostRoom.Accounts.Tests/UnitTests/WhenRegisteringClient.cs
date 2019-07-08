@@ -26,7 +26,7 @@ namespace BoostRoom.Accounts.Tests.UnitTests
 
         protected override void When()
         {
-            Aggregate = Client.RegisterWithDetails(
+            Aggregate = Client.FromDetails(
                 _clientId,
                 _username, 
                 _email, 

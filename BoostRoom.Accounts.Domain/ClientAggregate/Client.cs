@@ -9,7 +9,7 @@ namespace BoostRoom.Accounts.Domain.ClientAggregate
         {
         }
 
-        public static Client RegisterWithDetails(
+        public static Client FromDetails(
             ClientId id,
             string username,
             string email,
