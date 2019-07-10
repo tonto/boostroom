@@ -33,10 +33,13 @@ namespace BoostRoom.Infrastructure
             var streamEvents = await _connection.ReadStreamEventsForwardAsync(stream, 0, 4096, false);
 
             return streamEvents.Events.Select(e =>
-            {
-                var @event = JsonConvert.DeserializeObject(Encoding.ASCII.GetString(e.Event.Data), _serializerSettings);
-                return @event as IDomainEvent;
-            }).ToList().AsReadOnly();
+                {
+                    var @event =
+                        JsonConvert.DeserializeObject(Encoding.ASCII.GetString(e.Event.Data), _serializerSettings);
+                    return @event as IDomainEvent;
+                })
+                .ToList()
+                .AsReadOnly();
         }
 
         public async Task SaveEventsAsync(IEntityId aggregateId, int version, IReadOnlyCollection<IDomainEvent> events)

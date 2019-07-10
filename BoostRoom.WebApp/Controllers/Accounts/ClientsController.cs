@@ -24,17 +24,20 @@ namespace BoostRoom.WebApp.Controllers.Accounts
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterClientDto request)
         {
-            await _mediator.Send(new RegisterClient(
-                request.Username, 
-                request.Email, 
-                request.Password, 
-                request.FirstName,
-                request.LastName, 
-                request.AddressLine, 
-                request.City, 
-                request.Zip, 
-                request.Country,
-                request.SubscribeToOffers));
+            await _mediator.Send(
+                new RegisterClient(
+                    request.Username,
+                    request.Email,
+                    request.Password,
+                    request.FirstName,
+                    request.LastName,
+                    request.AddressLine,
+                    request.City,
+                    request.Zip,
+                    request.Country,
+                    request.SubscribeToOffers
+                )
+            );
 
             return NoContent();    
         }
