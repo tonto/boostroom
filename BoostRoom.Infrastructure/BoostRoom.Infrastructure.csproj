@@ -9,4 +9,8 @@
     <PackageReference Include="TacticalDDD" Version="1.0.12" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BoostRoom.Accounts.Domain\BoostRoom.Accounts.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

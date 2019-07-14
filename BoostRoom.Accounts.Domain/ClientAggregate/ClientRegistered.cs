@@ -37,7 +37,7 @@ namespace BoostRoom.Accounts.Domain.ClientAggregate
         public bool SubscribedToOffers { get; }
 
         public ClientRegistered(
-            ClientId clientId,
+            string clientId,
             string username,
             string email,
             string encryptedPassword,

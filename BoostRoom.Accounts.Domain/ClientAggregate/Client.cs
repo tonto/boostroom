@@ -26,7 +26,7 @@ namespace BoostRoom.Accounts.Domain.ClientAggregate
 
             client.Apply(
                 new ClientRegistered(
-                    id,
+                    id.ToString(),
                     username,
                     email,
                     encryptedPassword,
@@ -44,7 +44,7 @@ namespace BoostRoom.Accounts.Domain.ClientAggregate
 
         public void On(ClientRegistered @event)
         {
-            Id = @event.AggregateId as ClientId;
+            Id = new ClientId(@event.AggregateId);
         }
     }
 }

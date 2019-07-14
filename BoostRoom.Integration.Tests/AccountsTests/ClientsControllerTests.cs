@@ -1,19 +1,23 @@
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using BoostRoom.Accounts.Domain.ClientAggregate;
 using BoostRoom.WebApp;
 using BoostRoom.WebApp.Models;
 using Microsoft.AspNetCore.Http;
+using Tactical.DDD.Testing;
 using Xunit;
 
 namespace BoostRoom.Integration.Tests.AccountsTests
 {
-    public class ClientsControllerTests : IClassFixture<WebApplicationFactoryForTest<Startup>>
+    public class ClientsControllerTests : IClassFixture<ClientsControllerApplicationFactory<Startup>>
     {
+        private readonly ClientsControllerApplicationFactory<Startup> _factory;
         private readonly HttpClient _client;
 
-        public ClientsControllerTests(WebApplicationFactoryForTest<Startup> factory)
+        public ClientsControllerTests(ClientsControllerApplicationFactory<Startup> factory)
         {
+            _factory = factory;
             _client = factory.CreateClient();
         }
 
@@ -67,8 +71,17 @@ namespace BoostRoom.Integration.Tests.AccountsTests
             response.EnsureSuccessStatusCode();
 
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
-            
-            // TODO Assert event saved
+
+            var events = await _factory.EventStore.LoadAllEventsAsync();
+
+            events.ExpectOne<ClientRegistered>(e =>
+            {
+                Assert.NotNull(e.AggregateId);
+            });
         }
+
+        // TODO - Create test for duplicate username/email (this will test the unique projection)
+
+        // TODO - Check if event.Created at is loaded from db
     }
 }

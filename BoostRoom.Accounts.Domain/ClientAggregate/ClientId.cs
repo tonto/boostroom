@@ -12,6 +12,11 @@ namespace BoostRoom.Accounts.Domain.ClientAggregate
             _id = Guid.NewGuid();
         }
 
+        public ClientId(string id)
+        {
+            _id = Guid.Parse(id);
+        }
+
         public override string ToString() => _id.ToString();
     }
 }

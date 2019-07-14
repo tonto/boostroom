@@ -42,6 +42,22 @@ namespace BoostRoom.Infrastructure
                 .AsReadOnly();
         }
 
+        public async Task<IReadOnlyCollection<IDomainEvent>> LoadAllEventsAsync()
+        {
+            var streamEvents = await _connection.ReadAllEventsForwardAsync(Position.Start, 4096, false);
+
+            return streamEvents.Events
+                .Where(e => e.Event.EventStreamId[0] != '$')
+                .Select(e =>
+                {
+                    var @event =
+                        JsonConvert.DeserializeObject(Encoding.ASCII.GetString(e.Event.Data), _serializerSettings);
+                    return @event as IDomainEvent;
+                })
+                .ToList()
+                .AsReadOnly();
+        }
+
         public async Task SaveEventsAsync(IEntityId aggregateId, int version, IReadOnlyCollection<IDomainEvent> events)
         {
             var stream = $"{aggregateId.GetType().Name}-{aggregateId.ToString()}";
@@ -52,5 +68,6 @@ namespace BoostRoom.Infrastructure
                 return new EventData(Guid.NewGuid(), e.GetType().Name, true, json, new byte[] { });
             }));
         }
+
     }
 }

@@ -55,7 +55,7 @@ namespace BoostRoom.Accounts.Domain
                 country,
                 subscribeToOffers);
 
-            await _eventStore.SaveEventsAsync(client.Id, client.Version, client.DomainEvents);
+            await _eventStore.SaveEventsAsync(client.Id, -1, client.DomainEvents);
         }
     }
 }
