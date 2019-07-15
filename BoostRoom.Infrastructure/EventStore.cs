@@ -32,12 +32,8 @@ namespace BoostRoom.Infrastructure
 
             var streamEvents = await _connection.ReadStreamEventsForwardAsync(stream, 0, 4096, false);
 
-            return streamEvents.Events.Select(e =>
-                {
-                    var @event =
-                        JsonConvert.DeserializeObject(Encoding.ASCII.GetString(e.Event.Data), _serializerSettings);
-                    return @event as IDomainEvent;
-                })
+            return streamEvents.Events
+                .Select(DeserializeDomainEvent)
                 .ToList()
                 .AsReadOnly();
         }
@@ -48,14 +44,22 @@ namespace BoostRoom.Infrastructure
 
             return streamEvents.Events
                 .Where(e => e.Event.EventStreamId[0] != '$')
-                .Select(e =>
-                {
-                    var @event =
-                        JsonConvert.DeserializeObject(Encoding.ASCII.GetString(e.Event.Data), _serializerSettings);
-                    return @event as IDomainEvent;
-                })
+                .Select(DeserializeDomainEvent)
                 .ToList()
                 .AsReadOnly();
+        }
+
+        private IDomainEvent DeserializeDomainEvent(ResolvedEvent e)
+        {
+            var @event =
+                JsonConvert.DeserializeObject(Encoding.ASCII.GetString(e.Event.Data), _serializerSettings);
+
+            var domainEvent = @event as IDomainEvent;
+
+            if (domainEvent != null)
+                domainEvent.CreatedAt = e.Event.Created;
+
+            return domainEvent;
         }
 
         public async Task SaveEventsAsync(IEntityId aggregateId, int version, IReadOnlyCollection<IDomainEvent> events)
@@ -68,6 +72,5 @@ namespace BoostRoom.Infrastructure
                 return new EventData(Guid.NewGuid(), e.GetType().Name, true, json, new byte[] { });
             }));
         }
-
     }
 }

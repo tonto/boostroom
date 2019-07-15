@@ -10,12 +10,11 @@ namespace BoostRoom.Accounts.Domain
         [JsonProperty("aggregate_id")]
         public string AggregateId { get; set; }
 
-        [JsonProperty("created_at")]
+        [JsonIgnore]
         public DateTime CreatedAt { get; set; }
 
         protected DomainEvent()
         {
-            CreatedAt = DateTime.Now;
         }
     }
 }

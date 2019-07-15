@@ -1,3 +1,4 @@
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -54,18 +55,29 @@ namespace BoostRoom.Integration.Tests.AccountsTests
         [Fact]
         public async Task Register_Pass_Validation()
         {
+            const string username = "michael";
+            const string email = "me@mail.com";
+            const string password = "pass123";
+            const string firstName = "John";
+            const string lastName = "Doe";
+            const string addressLine = "Some Address";
+            const string city = "London";
+            const string zip = "1234";
+            const string country = "UK";
+            const bool subscribeToOffers = true;
+            
             var response = await _client.PostAsJsonAsync("/api/accounts/clients/register", new RegisterClientDto
             {
-                Username = "michael",
-                Email = "me@mail.com",
-                Password = "pass123",
-                FirstName = "John",
-                LastName = "Doe",
-                AddressLine = "Some Address",
-                City = "London",
-                Zip = "1234",
-                Country = "UK",
-                SubscribeToOffers = true 
+                Username = username,
+                Email = email,
+                Password = password,
+                FirstName = firstName,
+                LastName = lastName,
+                AddressLine = addressLine,
+                City = city,
+                Zip = zip,
+                Country = country,
+                SubscribeToOffers = subscribeToOffers 
             });
 
             response.EnsureSuccessStatusCode();
@@ -76,12 +88,21 @@ namespace BoostRoom.Integration.Tests.AccountsTests
 
             events.ExpectOne<ClientRegistered>(e =>
             {
-                Assert.NotNull(e.AggregateId);
+                Assert.False(String.IsNullOrEmpty(e.AggregateId));
+                Assert.True(e.CreatedAt > DateTime.MinValue);
+                Assert.Equal(username, e.Username);
+                Assert.Equal(email, e.Email);
+                Assert.False(String.IsNullOrEmpty(e.EncryptedPassword));
+                Assert.Equal(firstName, e.FirstName);
+                Assert.Equal(lastName, e.LastName);
+                Assert.Equal(addressLine, e.AddressLine);
+                Assert.Equal(city, e.City);
+                Assert.Equal(zip, e.Zip);
+                Assert.Equal(country, e.Country);
+                Assert.Equal(subscribeToOffers, e.SubscribedToOffers);
             });
         }
 
-        // TODO - Create test for duplicate username/email (this will test the unique projection)
-
-        // TODO - Check if event.Created at is loaded from db
+        // TODO - Create test for duplicate username/email (this will test unique projection)
     }
 }

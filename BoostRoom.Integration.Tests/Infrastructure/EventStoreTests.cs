@@ -42,7 +42,7 @@ namespace BoostRoom.Integration.Tests.Infrastructure
             loadedEvents.ExpectOne<TestEvent>(e =>
             {
                 Assert.Equal(id.ToString(), e.AggregateId);
-                Assert.Equal(createdAt, e.CreatedAt);
+                Assert.True(createdAt > DateTime.MinValue);
                 Assert.Equal(name, e.Name);
             });
         }

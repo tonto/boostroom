@@ -50,7 +50,6 @@ namespace BoostRoom.Accounts.Domain.ClientAggregate
             bool subscribedToOffers)
         {
             AggregateId = clientId;
-            CreatedAt = DateTime.Now;
             Username = username;
             Email = email;
             EncryptedPassword = encryptedPassword;

@@ -10,7 +10,7 @@ namespace BoostRoom.Integration.Tests.Infrastructure
         public string AggregateId { get; }
 
         [JsonProperty("created_at")]
-        public DateTime CreatedAt { get; }
+        public DateTime CreatedAt { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }

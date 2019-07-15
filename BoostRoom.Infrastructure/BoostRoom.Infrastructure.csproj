@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="EventStore.Client" Version="5.0.1" />
-    <PackageReference Include="TacticalDDD" Version="1.0.12" />
+    <PackageReference Include="TacticalDDD" Version="1.0.14" />
   </ItemGroup>
 
   <ItemGroup>
