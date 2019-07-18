@@ -7,28 +7,33 @@ using Docker.DotNet;
 using Docker.DotNet.Models;
 using System.Threading.Tasks;
 using EventStore.ClientAPI.Exceptions;
+using Raven.Embedded;
 using Xunit;
 
 namespace BoostRoom.Integration.Tests
 {
-    // TODO - Make this abstract class instead of Fixture
-    public class EmbeddedEventStoreFixture : IAsyncLifetime
+    public class IntegrationFixture : IAsyncLifetime 
     {
-        public IEventStoreConnection Connection { get; private set; }
-
-        private string EventStoreContainer { get; }
+        public IEventStoreConnection EventStoreConnection { get; private set; }
 
         private const string EventStoreImage = "eventstore/eventstore";
+        
+        private string _eventStoreContainer; 
 
         private DockerClient _client;
 
-        public EmbeddedEventStoreFixture()
+        public IntegrationFixture() 
         {
-            EventStoreContainer = "es" + Guid.NewGuid().ToString("N");
+            EmbeddedServer.Instance.StartServer(new ServerOptions
+            {
+                CommandLineArgs = new List<string>() {"RunInMemory=true"}
+            });
         }
 
         public async Task InitializeAsync()
         {
+            _eventStoreContainer = "es" + Guid.NewGuid().ToString("N");
+            
             var address = Environment.OSVersion.Platform == PlatformID.Unix
                 ? new Uri("unix:///var/run/docker.sock")
                 : new Uri("npipe://./pipe/docker_engine");
@@ -49,15 +54,15 @@ namespace BoostRoom.Integration.Tests
                     IgnoreProgress.Forever);
             }
 
-            Console.WriteLine("[docker] creating container " + EventStoreContainer);
+            Console.WriteLine("[docker] creating container " + _eventStoreContainer);
 
-            var port = EventStoreUtils.NextTestPort;
+            var port = 1113;
             
             await _client.Containers.CreateContainerAsync(
                 new CreateContainerParameters
                 {
                     Image = EventStoreImage,
-                    Name = EventStoreContainer,
+                    Name = _eventStoreContainer,
                     Tty = true,
                     HostConfig = new HostConfig
                     {
@@ -77,9 +82,9 @@ namespace BoostRoom.Integration.Tests
                     }
                 });
 
-            Console.WriteLine("[docker] starting container " + EventStoreContainer);
+            Console.WriteLine("[docker] starting container " + _eventStoreContainer);
 
-            await _client.Containers.StartContainerAsync(EventStoreContainer, new ContainerStartParameters { });
+            await _client.Containers.StartContainerAsync(_eventStoreContainer, new ContainerStartParameters { });
             
             var endpoint = new Uri($"tcp://127.0.0.1:{port}");
 
@@ -92,11 +97,11 @@ namespace BoostRoom.Integration.Tests
             var connectionName =
                 $"M={Environment.MachineName},P={Process.GetCurrentProcess().Id},T={DateTimeOffset.UtcNow.Ticks}";
 
-            Connection = EventStoreConnection.Create(settings, endpoint, connectionName);
+            EventStoreConnection = EventStore.ClientAPI.EventStoreConnection.Create(settings, endpoint, connectionName);
 
             Console.WriteLine("[docker] connecting to EventStore");
 
-            await Connection.ConnectAsync();
+            await EventStoreConnection.ConnectAsync();
 
             // Fix for EventStore throwing NotAuthenticatedException
             // because of not being ready but accepting connections
@@ -106,7 +111,7 @@ namespace BoostRoom.Integration.Tests
             {
                 try
                 {
-                    await Connection.DeleteStreamAsync("stream", -1);
+                    await EventStoreConnection.DeleteStreamAsync("stream", -1);
                     connected = true;
                 }
                 catch (NotAuthenticatedException ex)
@@ -120,19 +125,21 @@ namespace BoostRoom.Integration.Tests
         {
             if (_client != null)
             {
-                Connection?.Dispose();
+                EventStoreConnection?.Dispose();
 
-                Console.WriteLine("[docker] stopping container " + EventStoreContainer);
+                Console.WriteLine("[docker] stopping container " + _eventStoreContainer);
 
-                await _client.Containers.StopContainerAsync(EventStoreContainer, new ContainerStopParameters { });
+                await _client.Containers.StopContainerAsync(_eventStoreContainer, new ContainerStopParameters { });
 
-                Console.WriteLine("[docker] removing container " + EventStoreContainer);
+                Console.WriteLine("[docker] removing container " + _eventStoreContainer);
 
-                await _client.Containers.RemoveContainerAsync(EventStoreContainer,
+                await _client.Containers.RemoveContainerAsync(_eventStoreContainer,
                     new ContainerRemoveParameters {Force = true});
 
                 _client.Dispose();
             }
+            
+            EmbeddedServer.Instance.Dispose();
         }
 
         private class IgnoreProgress : IProgress<JSONMessage>

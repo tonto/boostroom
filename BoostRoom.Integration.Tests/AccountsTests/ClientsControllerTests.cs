@@ -15,29 +15,27 @@ using Xunit;
 
 namespace BoostRoom.Integration.Tests.AccountsTests
 {
-    public class ClientsControllerFixtures : 
-        EmbeddedRavenDbAbstractTest,
-        IClassFixture<EmbeddedEventStoreFixture>,
+    public class ClientsControllerTests : 
+        IntegrationAbstractTest,
         IClassFixture<ClientsControllerApplicationFactory<Startup>>
     {
         private readonly HttpClient _client;
         private BoostRoom.Infrastructure.EventStore _eventStore;
 
-        public ClientsControllerFixtures(
-            ClientsControllerApplicationFactory<Startup> factory, 
-            EmbeddedEventStoreFixture esFixture,
-            EmbeddedRavenDbFixture ravenDbFixture) : base(ravenDbFixture)
+        public ClientsControllerTests(
+            IntegrationFixture fixture,
+            ClientsControllerApplicationFactory<Startup> factory) : base(fixture)
         {
             _client = factory.WithWebHostBuilder(builder =>
                 {
                     builder.ConfigureServices(services =>
                     {
                         
-                        _eventStore = new BoostRoom.Infrastructure.EventStore(esFixture.Connection);
+                        _eventStore = new BoostRoom.Infrastructure.EventStore(EventStoreConnection);
                         
                         services.AddSingleton<IEventStore>(_eventStore);
                         services.AddSingleton<BoostRoom.Infrastructure.IEventStore>(_eventStore);
-                        services.AddSingleton<IDocumentStore>(DocumentStore);
+                        services.AddSingleton(DocumentStore);
                     });
                 })
                 .CreateClient();
@@ -107,7 +105,7 @@ namespace BoostRoom.Integration.Tests.AccountsTests
 
             var events = await _eventStore.LoadAllEventsAsync();
 
-            events.ExpectOne<ClientRegistered>(e =>
+            events.Expect<ClientRegistered>(e =>
             {
                 Assert.False(String.IsNullOrEmpty(e.AggregateId));
                 Assert.True(e.CreatedAt > DateTime.MinValue);

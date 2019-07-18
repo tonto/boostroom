@@ -10,13 +10,13 @@ using IEventStore = Tactical.DDD.EventSourcing.IEventStore;
 
 namespace BoostRoom.Integration.Tests.Infrastructure
 {
-    public class EventStoreTests : IClassFixture<EmbeddedEventStoreFixture>
+    public class EventStoreTests : IntegrationAbstractTest 
     {
         private readonly IEventStore _eventStore;
 
-        public EventStoreTests(EmbeddedEventStoreFixture esFixture)
+        public EventStoreTests(IntegrationFixture fixture) : base(fixture)
         {
-            _eventStore = new BoostRoom.Infrastructure.EventStore(esFixture.Connection);
+            _eventStore = new BoostRoom.Infrastructure.EventStore(EventStoreConnection);
         }
 
         [Fact]
