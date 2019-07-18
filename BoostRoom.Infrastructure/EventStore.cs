@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EventStore.ClientAPI;
+using EventStore.ClientAPI.SystemData;
 using Newtonsoft.Json;
 using Tactical.DDD;
 using Tactical.DDD.EventSourcing;
@@ -14,45 +15,22 @@ namespace BoostRoom.Infrastructure
     {
         // TODO Implement IDisposable and dispose of _connection
 
-        private readonly IEventStoreConnection _connection;
+        public readonly IEventStoreConnection Connection;
 
-        private readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings()
+        public static readonly JsonSerializerSettings SerializerSettings = new JsonSerializerSettings()
         {
             TypeNameHandling = TypeNameHandling.All
         };
 
         public EventStore(IEventStoreConnection connection)
         {
-            _connection = connection;
+            Connection = connection;
         }
 
-        public async Task<IReadOnlyCollection<IDomainEvent>> LoadEventsAsync(IEntityId aggregateId)
-        {
-            var stream = $"{aggregateId.GetType().Name}-{aggregateId.ToString()}";
-
-            var streamEvents = await _connection.ReadStreamEventsForwardAsync(stream, 0, 4096, false);
-
-            return streamEvents.Events
-                .Select(DeserializeDomainEvent)
-                .ToList()
-                .AsReadOnly();
-        }
-
-        public async Task<IReadOnlyCollection<IDomainEvent>> LoadAllEventsAsync()
-        {
-            var streamEvents = await _connection.ReadAllEventsForwardAsync(Position.Start, 4096, false);
-
-            return streamEvents.Events
-                .Where(e => e.Event.EventStreamId[0] != '$')
-                .Select(DeserializeDomainEvent)
-                .ToList()
-                .AsReadOnly();
-        }
-
-        private IDomainEvent DeserializeDomainEvent(ResolvedEvent e)
+        public static IDomainEvent DeserializeDomainEvent(ResolvedEvent e)
         {
             var @event =
-                JsonConvert.DeserializeObject(Encoding.ASCII.GetString(e.Event.Data), _serializerSettings);
+                JsonConvert.DeserializeObject(Encoding.ASCII.GetString(e.Event.Data), SerializerSettings);
 
             var domainEvent = @event as IDomainEvent;
 
@@ -62,15 +40,44 @@ namespace BoostRoom.Infrastructure
             return domainEvent;
         }
 
+        public async Task<IReadOnlyCollection<IDomainEvent>> LoadEventsAsync(IEntityId aggregateId)
+        {
+            var stream = $"{aggregateId.GetType().Name}-{aggregateId.ToString()}";
+
+            var streamEvents = await Connection.ReadStreamEventsForwardAsync(stream, 0, 4096, false);
+
+            return streamEvents.Events
+                .Select(DeserializeDomainEvent)
+                .ToList()
+                .AsReadOnly();
+        }
+
         public async Task SaveEventsAsync(IEntityId aggregateId, int version, IReadOnlyCollection<IDomainEvent> events)
         {
             var stream = $"{aggregateId.GetType().Name}-{aggregateId.ToString()}";
 
-            await _connection.AppendToStreamAsync(stream, version, events.Select(e =>
+            await Connection.AppendToStreamAsync(stream, version, events.Select(e =>
             {
-                var json = Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(e, _serializerSettings));
+                var json = Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(e, SerializerSettings));
                 return new EventData(Guid.NewGuid(), e.GetType().Name, true, json, new byte[] { });
             }));
+        }
+
+        public void SubscribeToAll(string subscriptionName, Action<IDomainEvent> action)
+        {
+            var defaultSettings = CatchUpSubscriptionSettings.Default;
+
+            var settings = new CatchUpSubscriptionSettings(defaultSettings.MaxLiveQueueSize,
+                defaultSettings.ReadBatchSize, false, false, subscriptionName); 
+
+            Connection.SubscribeToAllFrom(Position.Start, settings, (_, e) =>
+            {
+                if (e.Event.EventStreamId[0] == '$') return;
+
+                var domainEvent = DeserializeDomainEvent(e);
+
+                action(domainEvent);
+            });
         }
     }
 }

@@ -6,21 +6,17 @@ using Tactical.DDD;
 using Tactical.DDD.EventSourcing;
 using Tactical.DDD.Testing;
 using Xunit;
+using IEventStore = Tactical.DDD.EventSourcing.IEventStore;
 
 namespace BoostRoom.Integration.Tests.Infrastructure
 {
-    public class EventStoreTests
+    public class EventStoreTests : IClassFixture<EmbeddedEventStoreFixture>
     {
         private readonly IEventStore _eventStore;
 
-        public EventStoreTests()
+        public EventStoreTests(EmbeddedEventStoreFixture esFixture)
         {
-            var conn = EventStoreConnection.Create(new Uri("tcp://admin:changeit@localhost:1113"),
-                "testEventStoreConnection");
-
-            conn.ConnectAsync().Wait();
-
-            _eventStore = new BoostRoom.Infrastructure.EventStore(conn);
+            _eventStore = new BoostRoom.Infrastructure.EventStore(esFixture.Connection);
         }
 
         [Fact]

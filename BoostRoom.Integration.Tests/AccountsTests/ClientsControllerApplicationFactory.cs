@@ -4,6 +4,7 @@ using BoostRoom.Accounts.Application;
 using BoostRoom.Accounts.Domain;
 using BoostRoom.Accounts.Domain.ClientAggregate;
 using BoostRoom.Infrastructure.Accounts;
+using BoostRoom.Infrastructure.Accounts.RavenDB;
 using EventStore.ClientAPI;
 using MediatR;
 using Microsoft.AspNetCore.Hosting;
@@ -18,7 +19,6 @@ namespace BoostRoom.Integration.Tests.AccountsTests
     public class ClientsControllerApplicationFactory<TStartup> : WebApplicationFactory<TStartup>
         where TStartup : class
     {
-        public BoostRoom.Infrastructure.EventStore EventStore { get; private set; }
 
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
@@ -29,15 +29,6 @@ namespace BoostRoom.Integration.Tests.AccountsTests
                 services.AddSingleton<IPasswordEncoder, AesPasswordEncoder>();
                 services.AddSingleton<IUniqueAccountsProjection, UniqueAccountsProjection>();
                 services.AddSingleton<IClientsRepository, ClientsRepository>();
-
-                var conn = EventStoreConnection.Create(new Uri("tcp://admin:changeit@localhost:1113"),
-                              "testEventStoreConnection");
-
-                conn.ConnectAsync().Wait();
-
-                EventStore = new BoostRoom.Infrastructure.EventStore(conn);
-
-                services.AddSingleton<IEventStore>(EventStore);
 
                 services.AddScoped<RegistrationService, RegistrationService>();
             });

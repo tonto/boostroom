@@ -5,21 +5,40 @@ using System.Threading.Tasks;
 using BoostRoom.Accounts.Domain.ClientAggregate;
 using BoostRoom.WebApp;
 using BoostRoom.WebApp.Models;
+using EventStore.ClientAPI;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Raven.Client.Documents;
+using Tactical.DDD.EventSourcing;
 using Tactical.DDD.Testing;
 using Xunit;
 
 namespace BoostRoom.Integration.Tests.AccountsTests
 {
-    public class ClientsControllerTests : IClassFixture<ClientsControllerApplicationFactory<Startup>>
+    public class ClientsControllerTests : 
+        EmbeddedRavenDbTest,
+        IClassFixture<EmbeddedEventStoreFixture>,
+        IClassFixture<ClientsControllerApplicationFactory<Startup>>
     {
-        private readonly ClientsControllerApplicationFactory<Startup> _factory;
         private readonly HttpClient _client;
+        private BoostRoom.Infrastructure.EventStore _eventStore;
 
-        public ClientsControllerTests(ClientsControllerApplicationFactory<Startup> factory)
+        public ClientsControllerTests(ClientsControllerApplicationFactory<Startup> factory, EmbeddedEventStoreFixture esFixture)
         {
-            _factory = factory;
-            _client = factory.CreateClient();
+            _client = factory.WithWebHostBuilder(builder =>
+                {
+                    builder.ConfigureServices(services =>
+                    {
+                        
+                        _eventStore = new BoostRoom.Infrastructure.EventStore(esFixture.Connection);
+                        
+                        // TODO - What are the lifetimes of these ??????
+                        services.AddSingleton<IEventStore>(_eventStore);
+                        services.AddSingleton<BoostRoom.Infrastructure.IEventStore>(_eventStore);
+                        services.AddSingleton<IDocumentStore>(DocumentStore);
+                    });
+                })
+                .CreateClient();
         }
 
         [Fact]
@@ -53,7 +72,7 @@ namespace BoostRoom.Integration.Tests.AccountsTests
         }
 
         [Fact]
-        public async Task Register_Pass_Validation()
+        public async Task Register_Registers_Client()
         {
             const string username = "michael";
             const string email = "me@mail.com";
@@ -65,7 +84,7 @@ namespace BoostRoom.Integration.Tests.AccountsTests
             const string zip = "1234";
             const string country = "UK";
             const bool subscribeToOffers = true;
-            
+
             var response = await _client.PostAsJsonAsync("/api/accounts/clients/register", new RegisterClientDto
             {
                 Username = username,
@@ -77,14 +96,14 @@ namespace BoostRoom.Integration.Tests.AccountsTests
                 City = city,
                 Zip = zip,
                 Country = country,
-                SubscribeToOffers = subscribeToOffers 
+                SubscribeToOffers = subscribeToOffers
             });
-
+            
             response.EnsureSuccessStatusCode();
 
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
 
-            var events = await _factory.EventStore.LoadAllEventsAsync();
+            var events = await _eventStore.LoadAllEventsAsync();
 
             events.ExpectOne<ClientRegistered>(e =>
             {
