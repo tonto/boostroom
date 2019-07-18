@@ -15,15 +15,18 @@ using Xunit;
 
 namespace BoostRoom.Integration.Tests.AccountsTests
 {
-    public class ClientsControllerTests : 
-        EmbeddedRavenDbTest,
+    public class ClientsControllerFixtures : 
+        EmbeddedRavenDbAbstractTest,
         IClassFixture<EmbeddedEventStoreFixture>,
         IClassFixture<ClientsControllerApplicationFactory<Startup>>
     {
         private readonly HttpClient _client;
         private BoostRoom.Infrastructure.EventStore _eventStore;
 
-        public ClientsControllerTests(ClientsControllerApplicationFactory<Startup> factory, EmbeddedEventStoreFixture esFixture)
+        public ClientsControllerFixtures(
+            ClientsControllerApplicationFactory<Startup> factory, 
+            EmbeddedEventStoreFixture esFixture,
+            EmbeddedRavenDbFixture ravenDbFixture) : base(ravenDbFixture)
         {
             _client = factory.WithWebHostBuilder(builder =>
                 {
@@ -32,7 +35,6 @@ namespace BoostRoom.Integration.Tests.AccountsTests
                         
                         _eventStore = new BoostRoom.Infrastructure.EventStore(esFixture.Connection);
                         
-                        // TODO - What are the lifetimes of these ??????
                         services.AddSingleton<IEventStore>(_eventStore);
                         services.AddSingleton<BoostRoom.Infrastructure.IEventStore>(_eventStore);
                         services.AddSingleton<IDocumentStore>(DocumentStore);

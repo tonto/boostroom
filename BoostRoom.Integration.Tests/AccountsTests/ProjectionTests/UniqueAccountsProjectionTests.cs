@@ -16,11 +16,11 @@ using Raven.Client.ServerWide;
 
 namespace BoostRoom.Integration.Tests.AccountsTests.ProjectionTests
 {
-    public class UniqueAccountsProjectionTests : EmbeddedRavenDbTest 
+    public class UniqueAccountsProjectionTests : EmbeddedRavenDbAbstractTest 
     {
         private readonly UniqueAccountsProjection _projection;
 
-        public UniqueAccountsProjectionTests()
+        public UniqueAccountsProjectionTests(EmbeddedRavenDbFixture ravenDbFixture) : base(ravenDbFixture)
         {
             var eventStore = new Mock<BoostRoom.Infrastructure.IEventStore>();
 

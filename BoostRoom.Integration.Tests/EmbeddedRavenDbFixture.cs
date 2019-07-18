@@ -7,23 +7,18 @@ using Xunit;
 
 namespace BoostRoom.Integration.Tests
 {
-    public abstract class EmbeddedRavenDbTest : IDisposable
+    public class EmbeddedRavenDbFixture : IDisposable 
     {
-        protected readonly IDocumentStore DocumentStore; 
-        
-        protected EmbeddedRavenDbTest()
+        public EmbeddedRavenDbFixture()
         {
-            EmbeddedServer.Instance.StartServer(new ServerOptions
+               EmbeddedServer.Instance.StartServer(new ServerOptions
             {
                 CommandLineArgs = new List<string>() {"RunInMemory=true"}
             });
-
-            DocumentStore = EmbeddedServer.Instance.GetDocumentStore("EmbeddedDB");
         }
-
+        
         public void Dispose()
         {
-            DocumentStore.Dispose();
             EmbeddedServer.Instance.Dispose();
         }
     }
