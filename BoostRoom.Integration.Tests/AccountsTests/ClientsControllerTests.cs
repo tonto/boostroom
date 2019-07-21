@@ -30,7 +30,6 @@ namespace BoostRoom.Integration.Tests.AccountsTests
                 {
                     builder.ConfigureServices(services =>
                     {
-                        
                         _eventStore = new BoostRoom.Infrastructure.EventStore(EventStoreConnection);
                         
                         services.AddSingleton<IEventStore>(_eventStore);

@@ -103,7 +103,5 @@ namespace BoostRoom.Integration.Tests.AccountsTests.ProjectionTests
                 Assert.Equal(2, accounts.Count);
             }
         }
-
-        // TODO - Test AreEqual method
     }
 }
