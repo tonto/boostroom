@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 
 namespace BoostRoom.Accounts.Domain
 {
-    public interface IUniqueAccountsProjection
+    public interface IUniqueAccountsRepository
     {
         Task<bool> AreUnique(string username, string email);
     }

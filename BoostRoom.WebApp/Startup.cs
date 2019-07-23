@@ -1,11 +1,19 @@
+using BoostRoom.Accounts.Application;
+using BoostRoom.Accounts.Domain;
+using BoostRoom.Accounts.Domain.ClientAggregate;
+using BoostRoom.Infrastructure;
+using BoostRoom.Infrastructure.Accounts;
+using BoostRoom.Infrastructure.Accounts.RavenDB;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
+using Raven.Client.Documents;
+using IEventStore = Tactical.DDD.EventSourcing.IEventStore;
 
 namespace BoostRoom.WebApp
 {
@@ -18,21 +26,44 @@ namespace BoostRoom.WebApp
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        private static UniqueAccountsProjection _uniqueAccountsProjection;
+
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddMediatR(typeof(BoostRoom.Accounts.Application.AccountsApplicationAssembly));
+            // Application dependencies
+            services.AddMediatR(typeof(AccountsApplicationAssembly));
 
+            services.AddSingleton<IPasswordEncoder, AesPasswordEncoder>();
+            services.AddSingleton<IUniqueAccountsRepository, UniqueAccountsRepository>();
+            services.AddSingleton<IClientsRepository, ClientsRepository>();
+
+            services.AddScoped<RegistrationService, RegistrationService>();
+
+            // TODO - use config
+            var esConnection = BoostRoomEventStoreConnection.ConnectAsync().GetAwaiter().GetResult();
+            var eventStore = new BoostRoom.Infrastructure.EventStore(esConnection);
+
+            services.AddSingleton<IEventStore>(eventStore);
+            services.AddSingleton<BoostRoom.Infrastructure.IEventStore>(eventStore);
+
+            var store = BoostRoomDocumentStore.Create(); 
+
+            // TODO - use config
+            services.AddSingleton<IDocumentStore>(store);
+            
+            _uniqueAccountsProjection = new UniqueAccountsProjection(store, eventStore);
+
+            // MVC Dependencies
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            services.AddSwaggerGen(c =>
+                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Boostroom API", Version = "v1"})
+            );
+
             // In production, the Angular files will be served from this directory
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/dist";
-            });
+            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/dist"; });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -56,6 +87,10 @@ namespace BoostRoom.WebApp
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
             });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Boostroom API v1"); });
 
             app.UseSpa(spa =>
             {

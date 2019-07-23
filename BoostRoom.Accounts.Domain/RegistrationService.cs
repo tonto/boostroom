@@ -8,18 +8,18 @@ namespace BoostRoom.Accounts.Domain
     public sealed class RegistrationService
     {
         private readonly IPasswordEncoder _passwordEncoder;
-        private readonly IUniqueAccountsProjection _uniqueAccountsProjection;
+        private readonly IUniqueAccountsRepository _uniqueAccountsRepository;
         private readonly IClientsRepository _clientsRepository;
         private readonly IEventStore _eventStore;
 
         public RegistrationService(
             IPasswordEncoder passwordEncoder,
-            IUniqueAccountsProjection uniqueAccountsProjection,
+            IUniqueAccountsRepository uniqueAccountsRepository,
             IClientsRepository clientsRepository,
             IEventStore eventStore)
         {
             _passwordEncoder = passwordEncoder;
-            _uniqueAccountsProjection = uniqueAccountsProjection;
+            _uniqueAccountsRepository = uniqueAccountsRepository;
             _clientsRepository = clientsRepository;
             _eventStore = eventStore;
         }
@@ -37,7 +37,7 @@ namespace BoostRoom.Accounts.Domain
             bool subscribeToOffers
         )
         {
-            if (!await _uniqueAccountsProjection.AreUnique(username, email))
+            if (!await _uniqueAccountsRepository.AreUnique(username, email))
             {
                 throw new InvalidOperationException("username or email already exists");
             }

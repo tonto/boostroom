@@ -27,7 +27,7 @@ namespace BoostRoom.Integration.Tests.AccountsTests
                 services.AddMediatR(typeof(AccountsApplicationAssembly));
 
                 services.AddSingleton<IPasswordEncoder, AesPasswordEncoder>();
-                services.AddSingleton<IUniqueAccountsProjection, UniqueAccountsProjection>();
+                services.AddSingleton<IUniqueAccountsRepository, UniqueAccountsRepository>();
                 services.AddSingleton<IClientsRepository, ClientsRepository>();
 
                 services.AddScoped<RegistrationService, RegistrationService>();

@@ -116,7 +116,7 @@ namespace BoostRoom.Integration.Tests
                 }
                 catch (NotAuthenticatedException ex)
                 {
-                    Console.WriteLine("foo");
+                    Console.WriteLine(ex);
                 }
             }
         }

@@ -9,9 +9,7 @@ using Raven.Client.Documents.Operations.OngoingTasks;
 
 namespace BoostRoom.Infrastructure.Accounts.RavenDB
 {
-    // TODO - Dont implement IUniqueAccountsProjection - it should only have AreUnique (act as repo)
-    // Move this class to a separate ProjectionHost
-    public class UniqueAccountsProjection : IUniqueAccountsProjection
+    public class UniqueAccountsProjection 
     {
         private readonly IDocumentStore _documentStore;
 
@@ -38,11 +36,6 @@ namespace BoostRoom.Infrastructure.Accounts.RavenDB
 
                 session.SaveChanges();
             }
-        }
-
-        public Task<bool> AreUnique(string username, string email)
-        {
-            return Task.FromResult(true);
         }
 
         public class AccountEntry
