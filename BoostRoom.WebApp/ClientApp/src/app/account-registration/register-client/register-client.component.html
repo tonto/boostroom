@@ -1,5 +1,5 @@
 <h3>Register for Client Account</h3>
-<form [formGroup]="sellerForm">
+<form [formGroup]="clientForm" (ngSubmit)="submitClientForm()">
   <div class="form-row">
     <div class="col-md-6">
       <label>Username</label>
@@ -71,6 +71,12 @@
         />
       </div>
     </div>
+  </div>
+  <div
+    class="form-row text-danger"
+    *ngIf="clientForm.touched && clientForm.errors?.passwordsDoNotMatch"
+  >
+    <div class="form-group col-md-6">Passwords do not match</div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -227,7 +233,7 @@
   <button
     type="submit"
     class="btn btn-primary float-right btn-lg"
-    [disabled]="!sellerForm.valid"
+    [disabled]="!clientForm.valid"
   >
     Register <i class="tim-icons icon-triangle-right-17"></i>
   </button>

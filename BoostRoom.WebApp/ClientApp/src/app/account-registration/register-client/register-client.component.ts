@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-register-client',
@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class RegisterClientComponent implements OnInit {
 
-  sellerForm = new FormGroup({
+  clientForm = new FormGroup({
     username: new FormControl('', Validators.required),
     email: new FormControl('', [
       Validators.required,
@@ -24,6 +24,8 @@ export class RegisterClientComponent implements OnInit {
     country: new FormControl('', Validators.required),
     notifyAboutDeals: new FormControl(''),
     acceptTerms: new FormControl('', Validators.requiredTrue),
+  }, {
+    validators: [this.validatePassword]
   });
 
   constructor() { }
@@ -31,4 +33,15 @@ export class RegisterClientComponent implements OnInit {
   ngOnInit() {
   }
 
+  submitClientForm() {
+    console.log('form submited');
+  }
+
+  validatePassword(c: AbstractControl) {
+    if (c.get('password').value !== c.get('confirmPassword').value) {
+      return { passwordsDoNotMatch: true };
+    }
+
+    return null;
+  }
 }
