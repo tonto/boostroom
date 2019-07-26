@@ -7,9 +7,10 @@ import { AccountRegistrationComponent } from './account-registration.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegisterClientComponent } from './register-client/register-client.component';
+import { RegistrationConfirmationComponent } from './registration-confirmation/registration-confirmation.component';
 
 @NgModule({
-  declarations: [RegisterSellerComponent, AccountRegistrationComponent, RegisterClientComponent],
+  declarations: [RegisterSellerComponent, AccountRegistrationComponent, RegisterClientComponent, RegistrationConfirmationComponent],
   imports: [
     CommonModule,
     FormsModule,

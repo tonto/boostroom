@@ -1,11 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/scss/blk-design-system-pro.scss';
+
 form {
   label {
-    color: hsla(0,0%,100%,.8);
+    color: hsla(0, 0%, 100%, 0.8);
   }
 
-  .ng-invalid {
-    // border-color: rgb(206, 71, 71);
+  .ng-invalid.ng-dirty {
+    @extend .is-invalid;
+
   }
 
+  .ng-valid {
+    @extend .is-valid;
+  }
+}
+
+body {
+  background-image: url(./assets/img/dots.png);
+  background-size: contain;
+}
+
+.link-active {
+  color: #000;
 }
