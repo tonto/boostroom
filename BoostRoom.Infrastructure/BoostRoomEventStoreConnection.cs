@@ -9,18 +9,17 @@ namespace BoostRoom.Infrastructure
     {
         private static IEventStoreConnection _connection;
         
-        public static async Task<IEventStoreConnection> ConnectAsync()
+        public static async Task<IEventStoreConnection> ConnectAsync(string host, string username, string password)
         {
             if (_connection != null) return _connection;
             
-            var endpoint = new Uri("tcp://127.0.0.1:1113");
+            var endpoint = new Uri(host);
 
             var settings = ConnectionSettings
                 .Create()
                 .KeepReconnecting()
                 .KeepRetrying()
-                .SetDefaultUserCredentials(new UserCredentials("admin", "changeit"));
-
+                .SetDefaultUserCredentials(new UserCredentials(username, password));
 
             _connection = EventStoreConnection.Create(settings, endpoint);
 

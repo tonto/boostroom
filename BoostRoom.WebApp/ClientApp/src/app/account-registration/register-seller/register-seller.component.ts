@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterSellerComponent implements OnInit {
 
+  // sellerForm = new FormGroup({
+  //   username: new FormControl(''),
+  //   email: new FormControl(''),
+  //   password: new FormControl(''),
+  //   confirmPassword: new FormControl(''),
+  //   country: new FormControl('')
+
+  //   // TODO - Client registration first
+
+  // });
+
   constructor() { }
 
   ngOnInit() {

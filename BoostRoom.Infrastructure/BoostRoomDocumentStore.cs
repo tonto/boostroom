@@ -4,16 +4,15 @@ namespace BoostRoom.Infrastructure
 {
     public static class BoostRoomDocumentStore
     {
-        public static IDocumentStore Create()
+        public static IDocumentStore Create(string host, string database)
         {
             var store = new DocumentStore
             {
-                Urls = new[] // URL to the Server,
+                Urls = new[] 
                 {
-                    // or list of URLs 
-                    "http://localhost:8080" // to all Cluster Servers (Nodes)
+                   host 
                 },
-                Database = "Northwind", // Default database that DocumentStore will interact with
+                Database = database, 
                 Conventions = { }
             }.Initialize();
 

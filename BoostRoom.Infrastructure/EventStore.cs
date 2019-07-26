@@ -65,12 +65,7 @@ namespace BoostRoom.Infrastructure
 
         public void SubscribeToAll(string subscriptionName, Action<IDomainEvent> action)
         {
-            var defaultSettings = CatchUpSubscriptionSettings.Default;
-
-            var settings = new CatchUpSubscriptionSettings(defaultSettings.MaxLiveQueueSize,
-                defaultSettings.ReadBatchSize, false, false, subscriptionName); 
-
-            Connection.SubscribeToAllFrom(Position.Start, settings, (_, e) =>
+            Connection.SubscribeToAllFrom(Position.Start, CatchUpSubscriptionSettings.Default, (_, e) =>
             {
                 if (e.Event.EventStreamId[0] == '$') return;
 

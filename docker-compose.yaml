@@ -1,15 +1,5 @@
 version: '3'
 services:
-  webapp:
-    build: .
-    ports: 
-      - "8081:80"
-    depends_on: 
-      - ravendb
-      - eventstore
-    links: 
-      - ravendb
-      - eventstore
   ravendb:
     image: ravendb/ravendb
     ports:

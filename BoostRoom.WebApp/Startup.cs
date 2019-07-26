@@ -31,6 +31,7 @@ namespace BoostRoom.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             // Application dependencies
+            
             services.AddMediatR(typeof(AccountsApplicationAssembly));
 
             services.AddSingleton<IPasswordEncoder, AesPasswordEncoder>();
@@ -39,21 +40,29 @@ namespace BoostRoom.WebApp
 
             services.AddScoped<RegistrationService, RegistrationService>();
 
-            // TODO - use config
-            var esConnection = BoostRoomEventStoreConnection.ConnectAsync().GetAwaiter().GetResult();
+            var esSection = Configuration.GetSection("EventStore");
+            
+            var esConnection = BoostRoomEventStoreConnection.ConnectAsync(
+                esSection["Host"],
+                esSection["Username"],
+                esSection["Password"]
+                ).GetAwaiter().GetResult();
+            
             var eventStore = new BoostRoom.Infrastructure.EventStore(esConnection);
 
             services.AddSingleton<IEventStore>(eventStore);
             services.AddSingleton<BoostRoom.Infrastructure.IEventStore>(eventStore);
 
-            var store = BoostRoomDocumentStore.Create(); 
+            var rdbSection = Configuration.GetSection("RavenDB");
+            
+            var store = BoostRoomDocumentStore.Create(rdbSection["Host"], rdbSection["Database"]); 
 
-            // TODO - use config
             services.AddSingleton<IDocumentStore>(store);
             
             _uniqueAccountsProjection = new UniqueAccountsProjection(store, eventStore);
 
             // MVC Dependencies
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddSwaggerGen(c =>
@@ -73,11 +82,12 @@ namespace BoostRoom.WebApp
             else
             {
                 app.UseExceptionHandler("/Error");
+                
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+//                app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+//            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 

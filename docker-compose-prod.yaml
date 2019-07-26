@@ -1,0 +1,20 @@
+version: '3'
+services:
+  webapp:
+    build: .
+    ports: 
+      - "8081:80"
+    environment: 
+      - ASPNETCORE_ENVIRONMENT='Production'
+    depends_on: 
+      - ravendb
+      - eventstore
+    links: 
+      - ravendb
+      - eventstore
+    restart: always
+  ravendb:
+    restart: always
+  eventstore:
+    restart: always
+  
