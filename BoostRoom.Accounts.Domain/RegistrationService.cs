@@ -37,7 +37,9 @@ namespace BoostRoom.Accounts.Domain
             bool subscribeToOffers
         )
         {
-            if (!await _uniqueAccountsRepository.AreUnique(username, email))
+            var isUnique = await _uniqueAccountsRepository.AreUnique(username, email);
+            
+            if (!isUnique)
             {
                 throw new UsernameEmailTakenException("Username or Email is already registered.");
             }

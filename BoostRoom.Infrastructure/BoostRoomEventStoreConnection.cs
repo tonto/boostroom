@@ -24,7 +24,7 @@ namespace BoostRoom.Infrastructure
             _connection = EventStoreConnection.Create(settings, endpoint);
 
             await _connection.ConnectAsync();
-
+            
             return _connection;
         }
     }

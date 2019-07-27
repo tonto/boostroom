@@ -33,21 +33,13 @@ namespace BoostRoom.WebApp
         {
             // Application dependencies
             
-            services.AddMediatR(typeof(AccountsApplicationAssembly));
-
-            services.AddSingleton<IPasswordEncoder, AesPasswordEncoder>();
-            services.AddSingleton<IUniqueAccountsRepository, UniqueAccountsRepository>();
-            services.AddSingleton<IClientsRepository, ClientsRepository>();
-
-            services.AddScoped<RegistrationService, RegistrationService>();
-
             var esSection = Configuration.GetSection("EventStore");
-            
+
             var esConnection = BoostRoomEventStoreConnection.ConnectAsync(
                 esSection["Host"],
                 esSection["Username"],
                 esSection["Password"]
-                ).GetAwaiter().GetResult();
+            ).GetAwaiter().GetResult();
             
             var eventStore = new BoostRoom.Infrastructure.EventStore(esConnection);
 
@@ -55,15 +47,23 @@ namespace BoostRoom.WebApp
             services.AddSingleton<BoostRoom.Infrastructure.IEventStore>(eventStore);
 
             var rdbSection = Configuration.GetSection("RavenDB");
-            
-            var store = BoostRoomDocumentStore.Create(rdbSection["Host"], rdbSection["Database"]); 
+
+            var store = BoostRoomDocumentStore.Create(rdbSection["Host"], rdbSection["Database"]);
 
             services.AddSingleton<IDocumentStore>(store);
-            
+            services.AddSingleton<IUniqueAccountsRepository, UniqueAccountsRepository>();
+
+            services.AddMediatR(typeof(AccountsApplicationAssembly));
+
+            services.AddSingleton<IPasswordEncoder, AesPasswordEncoder>();
+            services.AddSingleton<IClientsRepository, ClientsRepository>();
+
+            services.AddScoped<RegistrationService, RegistrationService>();
+
             _uniqueAccountsProjection = new UniqueAccountsProjection(store, eventStore);
 
             // MVC Dependencies
-            
+
             services
                 .AddMvc(options => { options.Filters.Add<CustomExceptionFilterAttribute>(); })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -85,11 +85,11 @@ namespace BoostRoom.WebApp
             else
             {
                 app.UseExceptionHandler("/Error");
-                
+
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
 //                app.UseHsts();
             }
-            
+
 
 //            app.UseHttpsRedirection();
             app.UseStaticFiles();
