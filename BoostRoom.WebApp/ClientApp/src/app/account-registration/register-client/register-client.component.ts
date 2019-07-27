@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { RegistrationService } from '../services/registration.service';
 import { Router } from '@angular/router';
+import { finalize, delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-register-client',
@@ -50,12 +51,27 @@ export class RegisterClientComponent implements OnInit {
 
   submitClientForm() {
     this.registrationInProgress = true;
+    const form = this.clientForm.value;
 
-    this.registrationService.registerClient()
-      .subscribe(_ => {
-        console.log('foo');
-        this.router.navigate(['accounts/registration-confirmation']);
-      });
+    this.registrationService.registerClient({
+      username: form.username,
+      email: form.email,
+      password: form.password,
+      firstName: form.firstName,
+      lastName: form.lastName,
+      addressLine: form.address,
+      city: form.city,
+      zip: form.zip,
+      country: form.country,
+      subscribeToOffers: form.notifyAboutDeals
+    }).pipe(
+      delay(2000),
+      finalize(() => {
+        this.registrationInProgress = false;
+      })
+    ).subscribe(_ => {
+      this.router.navigate(['accounts/registration-confirmation']);
+    });
 
     return false;
   }

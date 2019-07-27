@@ -25,9 +25,10 @@ import { AccountRegistrationModule } from './account-registration/account-regist
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: '', redirectTo: 'accounts/register', pathMatch: 'full' }
+      // { path: '', component: HomeComponent, pathMatch: 'full' },
+      // { path: 'counter', component: CounterComponent },
+      // { path: 'fetch-data', component: FetchDataComponent },
     ]),
     NgbModule,
     AccountRegistrationModule
