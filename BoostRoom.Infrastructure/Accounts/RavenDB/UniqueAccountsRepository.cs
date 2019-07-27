@@ -9,7 +9,7 @@ namespace BoostRoom.Infrastructure.Accounts.RavenDB
         
         public Task<bool> AreUnique(string username, string email)
         {
-            return Task.FromResult(true);
+            return Task.FromResult(false);
         }
     }
 }

@@ -4,6 +4,7 @@ using BoostRoom.Accounts.Domain.ClientAggregate;
 using BoostRoom.Infrastructure;
 using BoostRoom.Infrastructure.Accounts;
 using BoostRoom.Infrastructure.Accounts.RavenDB;
+using BoostRoom.WebApp.Filters;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -63,7 +64,9 @@ namespace BoostRoom.WebApp
 
             // MVC Dependencies
             
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services
+                .AddMvc(options => { options.Filters.Add<CustomExceptionFilterAttribute>(); })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddSwaggerGen(c =>
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Boostroom API", Version = "v1"})
@@ -86,6 +89,7 @@ namespace BoostRoom.WebApp
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
 //                app.UseHsts();
             }
+            
 
 //            app.UseHttpsRedirection();
             app.UseStaticFiles();

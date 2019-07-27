@@ -1,0 +1,18 @@
+<div
+  *ngFor="let toast of toastService.toasts"
+  (hide)="toastService.remove(toast)"
+  [class]="'alert alert-with-icon ' + toast.classname"
+>
+  <button
+    type="button"
+    aria-hidden="true"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+    (click)="toastService.remove(toast)"
+  >
+    <i class="tim-icons icon-simple-remove"></i>
+  </button>
+  <span data-notify="icon" class="tim-icons icon-alert-circle-exc"></span>
+  {{ toast.textOrTpl }}
+</div>

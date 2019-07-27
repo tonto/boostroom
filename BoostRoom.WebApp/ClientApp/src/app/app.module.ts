@@ -11,6 +11,9 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AccountRegistrationModule } from './account-registration/account-registration.module';
+import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
+import { ToasterContainerComponent } from './toaster-container/toaster-container.component';
+import { ToasterService } from './services/toaster.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,11 @@ import { AccountRegistrationModule } from './account-registration/account-regist
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    ToasterContainerComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
@@ -30,10 +35,17 @@ import { AccountRegistrationModule } from './account-registration/account-regist
       // { path: 'counter', component: CounterComponent },
       // { path: 'fetch-data', component: FetchDataComponent },
     ]),
-    NgbModule,
-    AccountRegistrationModule
+    AccountRegistrationModule,
   ],
-  providers: [],
+  providers: [
+    ToasterService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true,
+      deps: [ToasterService]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

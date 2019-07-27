@@ -1,0 +1,12 @@
+  :host {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    margin: 0.5em;
+    z-index: 1200;
+    min-width: 300px;
+  }
+
+  .alert {
+    padding-right: 3rem;
+  }

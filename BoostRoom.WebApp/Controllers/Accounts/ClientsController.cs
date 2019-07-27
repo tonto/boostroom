@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BoostRoom.WebApp.Controllers.Accounts
 {
     [ApiController]
+    [Produces("application/json")]
     [Route("api/accounts/clients")]
     public class ClientsController : ControllerBase
     {

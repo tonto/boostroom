@@ -39,7 +39,7 @@ namespace BoostRoom.Accounts.Domain
         {
             if (!await _uniqueAccountsRepository.AreUnique(username, email))
             {
-                throw new InvalidOperationException("username or email already exists");
+                throw new UsernameEmailTakenException("Username or Email is already registered.");
             }
 
             var client = Client.FromDetails(
