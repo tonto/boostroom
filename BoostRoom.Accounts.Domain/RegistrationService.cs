@@ -7,6 +7,7 @@ namespace BoostRoom.Accounts.Domain
 {
     public sealed class RegistrationService
     {
+        private readonly IEmailSender _emailSender;
         private readonly IPasswordEncoder _passwordEncoder;
         private readonly IUniqueAccountsRepository _uniqueAccountsRepository;
         private readonly IClientsRepository _clientsRepository;
@@ -16,12 +17,13 @@ namespace BoostRoom.Accounts.Domain
             IPasswordEncoder passwordEncoder,
             IUniqueAccountsRepository uniqueAccountsRepository,
             IClientsRepository clientsRepository,
-            IEventStore eventStore)
+            IEventStore eventStore, IEmailSender emailSender)
         {
             _passwordEncoder = passwordEncoder;
             _uniqueAccountsRepository = uniqueAccountsRepository;
             _clientsRepository = clientsRepository;
             _eventStore = eventStore;
+            _emailSender = emailSender;
         }
 
         public async Task RegisterClient(
@@ -58,6 +60,20 @@ namespace BoostRoom.Accounts.Domain
                 subscribeToOffers);
 
             await _eventStore.SaveEventsAsync(client.Id, -1, client.DomainEvents);
+
+            await SendConfirmationEmail(firstName, email);
+        }
+
+        private async Task SendConfirmationEmail(string name, string email)
+        {
+            var code = Guid.NewGuid();
+            var mail = $@"
+Congratulations {name}!<br /><br />
+Your BoostRoom account has been created.<br />
+Click <a href='http://18.188.124.36/accounts/confirm-email/{code}'>here</a> to confirm your email.<br /><br />
+BoostRoom";
+
+            await _emailSender.SendEmailAsync(email, "BoostRoom Email Confirmation", mail);
         }
     }
 }

@@ -4,6 +4,7 @@ using BoostRoom.Accounts.Domain.ClientAggregate;
 using BoostRoom.Infrastructure;
 using BoostRoom.Infrastructure.Accounts;
 using BoostRoom.Infrastructure.Accounts.RavenDB;
+using BoostRoom.Infrastructure.Email;
 using BoostRoom.WebApp.Filters;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -57,11 +58,13 @@ namespace BoostRoom.WebApp
 
             services.AddSingleton<IPasswordEncoder, AesPasswordEncoder>();
             services.AddSingleton<IClientsRepository, ClientsRepository>();
+            services.AddSingleton<IEmailSender, EmailSender>();
 
             services.AddScoped<RegistrationService, RegistrationService>();
+            
 
             _uniqueAccountsProjection = new UniqueAccountsProjection(store, eventStore);
-
+            
             // MVC Dependencies
 
             services
