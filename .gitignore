@@ -35,5 +35,6 @@ msbuild.wrn
 .idea/
 # Visual Studio 2015
 .vs/
-
+ravedb_data/
+eventstore_data/
 node_modules/
