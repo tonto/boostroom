@@ -8,7 +8,9 @@ export class ToasterService {
   toasts: any[] = [];
 
   show(textOrTpl: string | TemplateRef<any>, options: any = {}) {
-    this.toasts.push({ textOrTpl, ...options });
+    const toast = { textOrTpl, ...options };
+    this.toasts.push(toast);
+    setTimeout(() => this.remove(toast), 4000);
   }
 
   remove(toast) {

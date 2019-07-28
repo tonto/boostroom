@@ -3,7 +3,7 @@ services:
   webapp:
     build: .
     ports: 
-      - "8081:80"
+      - "80:80"
     environment: 
       - ASPNETCORE_ENVIRONMENT='Production'
     depends_on: 
@@ -15,6 +15,10 @@ services:
     restart: always
   ravendb:
     restart: always
+    volumes:
+      - "./ravedb_data:/opt/RavenDB/Server/RavenData"
   eventstore:
     restart: always
+    volumes:
+      - "./eventstore_data:/var/lib/eventstore"
   

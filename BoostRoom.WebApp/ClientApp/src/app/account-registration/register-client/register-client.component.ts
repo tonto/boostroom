@@ -65,8 +65,9 @@ export class RegisterClientComponent implements OnInit {
       country: form.country,
       subscribeToOffers: form.notifyAboutDeals ? true : false
     }).pipe(
+      delay(2000),
       finalize(() => {
-        setTimeout(() => this.registrationInProgress = false, 2000);
+        this.registrationInProgress = false;
       })
     ).subscribe(_ => {
       this.router.navigate(['accounts/registration-confirmation']);
