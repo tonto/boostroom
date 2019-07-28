@@ -5,7 +5,7 @@ services:
     ports: 
       - "80:80"
     environment: 
-      - ASPNETCORE_ENVIRONMENT='Production'
+      - ASPNETCORE_ENVIRONMENT=Production
     depends_on: 
       - ravendb
       - eventstore
