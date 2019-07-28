@@ -13,6 +13,14 @@ services:
       - ravendb
       - eventstore
     restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.60'
+          memory: 2000M
+        reservations:
+          cpus: '0.50'
+          memory: 1000M
   ravendb:
     restart: always
     volumes:
