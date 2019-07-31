@@ -17,14 +17,14 @@ namespace BoostRoom.Integration.Tests.AccountsTests
 {
     public class ClientsControllerTests : 
         IntegrationAbstractTest,
-        IClassFixture<ClientsControllerApplicationFactory<Startup>>
+        IClassFixture<AccountsApplicationFactory<Startup>>
     {
         private readonly HttpClient _client;
         private BoostRoom.Infrastructure.EventStore _eventStore;
 
         public ClientsControllerTests(
             IntegrationFixture fixture,
-            ClientsControllerApplicationFactory<Startup> factory) : base(fixture)
+            AccountsApplicationFactory<Startup> factory) : base(fixture)
         {
             _client = factory.WithWebHostBuilder(builder =>
                 {
@@ -120,7 +120,5 @@ namespace BoostRoom.Integration.Tests.AccountsTests
                 Assert.Equal(subscribeToOffers, e.SubscribedToOffers);
             });
         }
-
-        // TODO - Create test for duplicate username/email (this will test unique projection)
     }
 }

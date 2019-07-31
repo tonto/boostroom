@@ -1,10 +1,23 @@
 <div class="container-fluid reg-wrapper">
   <div class="row justify-content-center">
     <div class="col-sm-12 col-md-8">
+      <div class="row">
+        <div class="col-12">
+          <input class="tgl tgl-skewed" id="cb3" type="checkbox" />
+          <label
+            class="tgl-btn float-right clearfix"
+            data-tg-off="Seller Account"
+            data-tg-on="Client Account"
+            for="cb3"
+            (click)="toggleRegistration()"
+          ></label>
+        </div>
+      </div>
+
+      <app-register-client *ngIf="clientRegistration"></app-register-client>
+      <app-register-seller *ngIf="!clientRegistration"></app-register-seller>
       <!-- <div class="card p-3"> -->
       <!-- <div class="card-body"> -->
-      <!-- <app-register-seller></app-register-seller> -->
-      <app-register-client></app-register-client>
 
       <!-- </div> -->
       <!-- </div> -->

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, AbstractControl, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register-seller',
@@ -7,20 +8,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterSellerComponent implements OnInit {
 
-  // sellerForm = new FormGroup({
-  //   username: new FormControl(''),
-  //   email: new FormControl(''),
-  //   password: new FormControl(''),
-  //   confirmPassword: new FormControl(''),
-  //   country: new FormControl('')
+  sellerForm = new FormGroup({
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5)
+    ]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5)
+    ]),
+    confirmPassword: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5)
+    ]),
+    country: new FormControl('', Validators.required),
+    acceptTerms: new FormControl('', Validators.requiredTrue),
+  }, {
+    validators: [this.validatePassword]
+  });
 
-  //   // TODO - Client registration first
-
-  // });
+  registrationInProgress = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  submitSellerForm() {
+
+  }
+
+  validatePassword(c: AbstractControl) {
+    if (c.get('password').value !== c.get('confirmPassword').value) {
+      return { passwordsDoNotMatch: true };
+    }
+
+    return null;
+  }
 }

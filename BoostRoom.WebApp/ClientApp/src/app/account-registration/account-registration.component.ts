@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountRegistrationComponent implements OnInit {
 
+  clientRegistration = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleRegistration() {
+    this.clientRegistration = !this.clientRegistration;
   }
 
 }

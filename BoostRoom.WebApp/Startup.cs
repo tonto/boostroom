@@ -57,7 +57,7 @@ namespace BoostRoom.WebApp
             services.AddMediatR(typeof(AccountsApplicationAssembly));
 
             services.AddSingleton<IPasswordEncoder, AesPasswordEncoder>();
-            services.AddSingleton<IClientsRepository, ClientsRepository>();
+            services.AddSingleton<IClientRepository, ClientRepository>();
             services.AddSingleton<IEmailSender, EmailSender>();
 
             services.AddScoped<RegistrationService, RegistrationService>();

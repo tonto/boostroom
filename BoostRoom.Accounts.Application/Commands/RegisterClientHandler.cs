@@ -18,7 +18,7 @@ namespace BoostRoom.Accounts.Application.Commands
 
         public async Task<Unit> Handle(RegisterClient request, CancellationToken cancellationToken)
         {
-            // TODO - Validate command 
+            // TODO - Remove model - command from controller 
 
             await _registrationService.RegisterClient(
                 request.Username,
