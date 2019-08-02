@@ -9,9 +9,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegisterClientComponent } from './register-client/register-client.component';
 import { RegistrationConfirmationComponent } from './registration-confirmation/registration-confirmation.component';
 import { EmailConfirmationComponent } from './email-confirmation/email-confirmation.component';
+import { SellerRegistrationConfirmationComponent } from './seller-registration-confirmation/seller-registration-confirmation.component';
 
 @NgModule({
-  declarations: [RegisterSellerComponent, AccountRegistrationComponent, RegisterClientComponent, RegistrationConfirmationComponent, EmailConfirmationComponent],
+  declarations: [RegisterSellerComponent, AccountRegistrationComponent, RegisterClientComponent, RegistrationConfirmationComponent, EmailConfirmationComponent, SellerRegistrationConfirmationComponent],
   imports: [
     CommonModule,
     FormsModule,

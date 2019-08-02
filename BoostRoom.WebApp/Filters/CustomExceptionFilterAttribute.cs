@@ -22,12 +22,10 @@ namespace BoostRoom.WebApp.Filters
 
         public override void OnException(ExceptionContext context)
         {
-//            if (!_hostingEnvironment.IsDevelopment())
-//            {
-//                return;
-//            }
-
-            // TODO - If not domain exception and isDev, throw
+            if (_hostingEnvironment.IsDevelopment() && !(context.Exception is DomainException))
+            {
+                return;
+            }
 
             var statusCode = (int) HttpStatusCode.InternalServerError;
 
