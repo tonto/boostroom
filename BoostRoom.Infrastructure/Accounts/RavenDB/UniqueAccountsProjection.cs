@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using BoostRoom.Accounts.Domain;
 using BoostRoom.Accounts.Domain.ClientAggregate;
+using BoostRoom.Accounts.Domain.SellerAggregate;
 using EventStore.ClientAPI;
 using EventStore.ClientAPI.SystemData;
 using Raven.Client.Documents;
@@ -25,6 +26,20 @@ namespace BoostRoom.Infrastructure.Accounts.RavenDB
         }
 
         public void On(ClientRegistered @event)
+        {
+            using (var session = _documentStore.OpenSession())
+            {
+                session.Store(new AccountEntry
+                {
+                    Email = @event.Email,
+                    Username = @event.Username
+                });
+
+                session.SaveChanges();
+            }
+        }
+
+        public void On(SellerRegistered @event)
         {
             using (var session = _documentStore.OpenSession())
             {

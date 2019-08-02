@@ -17,20 +17,15 @@ namespace BoostRoom.Accounts.Domain.SellerAggregate
         {
             var seller = new Seller();
 
-            //client.Apply(
-            //    new ClientRegistered(
-            //        id.ToString(),
-            //        username,
-            //        email,
-            //        encryptedPassword,
-            //        firstName,
-            //        lastName,
-            //        addressLine,
-            //        city,
-            //        zip,
-            //        country,
-            //        subscribeToOffers)
-            //);
+            seller.Apply(
+                new SellerRegistered(
+                    id.ToString(),
+                    username,
+                    email,
+                    encryptedPassword,
+                    country
+                )
+            );
 
             return seller;
         }
