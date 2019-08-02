@@ -44,12 +44,7 @@ namespace BoostRoom.Accounts.Domain
             bool subscribeToOffers
         )
         {
-            var isUnique = await _uniqueAccountsRepository.AreUnique(username, email);
-
-            if (!isUnique)
-            {
-                throw new UsernameEmailTakenException("Username or Email is already registered.");
-            }
+            await ValidateUsernameEmailUniqueness(username, email);
 
             var client = Client.FromDetails(
                 _clientRepository.NextId(),
@@ -88,6 +83,8 @@ BoostRoom";
             string country
         )
         {
+            await ValidateUsernameEmailUniqueness(username, email);
+
             var seller = Seller.FromDetails(
                 _sellerRepository.NextId(),
                 username,
@@ -110,6 +107,16 @@ We will contact you once your account has been reviewed.<br /><br />
 BoostRoom";
 
             await _emailSender.SendEmailAsync(email, "BoostRoom Email Confirmation", mail);
+        }
+
+        private async Task ValidateUsernameEmailUniqueness(string username, string email)
+        {
+            var isUnique = await _uniqueAccountsRepository.AreUnique(username, email);
+
+            if (!isUnique)
+            {
+                throw new UsernameEmailTakenException("Username or Email is already registered.");
+            }
         }
     }
 }
