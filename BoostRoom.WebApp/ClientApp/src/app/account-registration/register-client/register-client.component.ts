@@ -42,6 +42,8 @@ export class RegisterClientComponent implements OnInit {
 
   registrationInProgress = false;
 
+  recaptchaValid = false;
+
   constructor(
     private router: Router,
     private registrationService: RegistrationService) { }
@@ -82,5 +84,9 @@ export class RegisterClientComponent implements OnInit {
     }
 
     return null;
+  }
+
+  resolved(captchaResponse: string) {
+    this.recaptchaValid = true;
   }
 }

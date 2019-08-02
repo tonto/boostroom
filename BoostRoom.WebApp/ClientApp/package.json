@@ -28,6 +28,7 @@
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
     "jquery": "3.3.1",
+    "ng-recaptcha": "^4.3.0",
     "ngx-captcha": "^7.0.0",
     "oidc-client": "^1.6.1",
     "popper.js": "^1.14.3",

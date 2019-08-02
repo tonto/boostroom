@@ -1,4 +1,5 @@
-﻿using Tactical.DDD.EventSourcing;
+﻿using BoostRoom.Accounts.Domain.ClientAggregate;
+using Tactical.DDD.EventSourcing;
 
 namespace BoostRoom.Accounts.Domain.SellerAggregate
 {
@@ -28,6 +29,11 @@ namespace BoostRoom.Accounts.Domain.SellerAggregate
             );
 
             return seller;
+        }
+
+        public void On(SellerRegistered @event)
+        {
+            Id = new SellerId(@event.AggregateId);
         }
     }
 }

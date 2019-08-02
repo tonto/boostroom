@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, AbstractControl, FormControl, Validators } from '@angular/forms';
+import { RegistrationService } from '../services/registration.service';
+import { delay, finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-seller',
@@ -33,13 +36,35 @@ export class RegisterSellerComponent implements OnInit {
 
   registrationInProgress = false;
 
-  constructor() { }
+  recaptchaValid = false;
+
+  constructor(
+    private router: Router,
+    private registrationService: RegistrationService
+  ) { }
 
   ngOnInit() {
   }
 
   submitSellerForm() {
+    this.registrationInProgress = true;
+    const form = this.sellerForm.value;
 
+    this.registrationService.registerSeller({
+      username: form.username,
+      email: form.email,
+      password: form.password,
+      country: form.country
+    }).pipe(
+      delay(2000),
+      finalize(() => {
+        this.registrationInProgress = false;
+      })
+    ).subscribe(_ => {
+      this.router.navigate(['accounts/seller-registration-confirmation']);
+    });
+
+    return false;
   }
 
   validatePassword(c: AbstractControl) {
@@ -48,5 +73,9 @@ export class RegisterSellerComponent implements OnInit {
     }
 
     return null;
+  }
+
+  resolved(captchaResponse: string) {
+    this.recaptchaValid = true;
   }
 }

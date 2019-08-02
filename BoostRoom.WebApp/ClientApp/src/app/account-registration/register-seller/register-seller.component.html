@@ -377,8 +377,8 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <div class="col-md-6 pl-2">
+  <div class="form-group form-row">
+    <div class="col-md-12 pl-2">
       <div class="form-check form-group">
         <label class="form-check-label text-warning">
           <input
@@ -394,7 +394,11 @@
         </label>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12 mt-3">
+      <re-captcha
+        (resolved)="resolved($event)"
+        siteKey="6LfTDLEUAAAAAN92h3eKyrMsYd3jXcoK83e62bie"
+      ></re-captcha>
     </div>
   </div>
   <div class="form-row form-group">
@@ -403,7 +407,7 @@
         *ngIf="!registrationInProgress"
         type="submit"
         class="btn btn-primary btn-lg col-xs-12 col-md-5 col-lg-4"
-        [disabled]="!sellerForm.valid"
+        [disabled]="!sellerForm.valid || !recaptchaValid"
       >
         Register <i class="tim-icons icon-triangle-right-17"></i>
       </button>
